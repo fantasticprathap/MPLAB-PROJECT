@@ -1,0 +1,120 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 D:\MPLAB\Basic\INTERRUPT USING 2 SEGMENT.X\INTERRUPT USING 2 SEGMENT.c
+[v _itr itr `II(v  1 e 1 0 ]
+"31
+[v _main main `(v  1 e 1 0 ]
+"55
+[v _pulse pulse `(v  1 e 1 0 ]
+"62
+[v _LCD LCD `(v  1 e 1 0 ]
+"71
+[v _display display `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3929
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"4079
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"4082
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"4085
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"13 D:\MPLAB\Basic\INTERRUPT USING 2 SEGMENT.X\INTERRUPT USING 2 SEGMENT.c
+[v _cc cc `[10]i  1 e 20 0 ]
+"31
+[v _main main `(v  1 e 1 0 ]
+{
+"47
+[v main@cnt cnt `i  1 a 2 24 ]
+"54
+} 0
+"71
+[v _display display `(v  1 e 1 0 ]
+{
+"73
+[v display@c c `i  1 a 2 22 ]
+[v display@b b `i  1 a 2 20 ]
+[v display@a a `i  1 a 2 18 ]
+"71
+[v display@k k `i  1 p 2 16 ]
+"80
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 14 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 13 ]
+[v ___awdiv@counter counter `uc  1 a 1 12 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
+[v ___awdiv@dividend dividend `i  1 p 2 9 ]
+"41
+} 0
+"62 D:\MPLAB\Basic\INTERRUPT USING 2 SEGMENT.X\INTERRUPT USING 2 SEGMENT.c
+[v _LCD LCD `(v  1 e 1 0 ]
+{
+[v LCD@g g `i  1 p 2 2 ]
+[v LCD@h h `i  1 p 2 4 ]
+"70
+} 0
+"55
+[v _pulse pulse `(v  1 e 1 0 ]
+{
+"61
+} 0
+"17
+[v _itr itr `II(v  1 e 1 0 ]
+{
+"21
+[v itr@i i `i  1 a 2 7 ]
+"30
+} 0

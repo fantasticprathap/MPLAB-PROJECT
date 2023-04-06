@@ -1,0 +1,69 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"11 D:\MPLAB\Basic\4-7segment LED.X\4-7segment LED.c
+[v _main main `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"4103
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"4106
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"4109
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"4112
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"4181
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4184
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4187
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"4190
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"11 D:\MPLAB\Basic\4-7segment LED.X\4-7segment LED.c
+[v _main main `(v  1 e 1 0 ]
+{
+"24
+[v main@cc cc `[10]uc  1 a 10 10 ]
+"23
+[v main@ca ca `[10]uc  1 a 10 0 ]
+"25
+[v main@l l `i  1 a 2 26 ]
+[v main@k k `i  1 a 2 24 ]
+[v main@j j `i  1 a 2 22 ]
+[v main@i i `i  1 a 2 20 ]
+"22
+[v main@F1265 F1265 `[10]uc  1 s 10 F1265 ]
+"23
+[v main@F1267 F1267 `[10]uc  1 s 10 F1267 ]
+"61
+} 0

@@ -1,0 +1,1408 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Sun Mar 26 12:06:25 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2,group=1
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2,group=1
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	dabs	1,0x7E,2
+    17  0000                     
+    18                           ; Version 2.20
+    19                           ; Generated 12/02/2020 GMT
+    20                           ; 
+    21                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    22                           ; All rights reserved.
+    23                           ; 
+    24                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    25                           ; 
+    26                           ; Redistribution and use in source and binary forms, with or without modification, are
+    27                           ; permitted provided that the following conditions are met:
+    28                           ; 
+    29                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    30                           ;        conditions and the following disclaimer.
+    31                           ; 
+    32                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    33                           ;        of conditions and the following disclaimer in the documentation and/or other
+    34                           ;        materials provided with the distribution.
+    35                           ; 
+    36                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    37                           ;        software without specific prior written permission.
+    38                           ; 
+    39                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    40                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    41                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    42                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    43                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    44                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    45                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    46                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    47                           ; 
+    48                           ; 
+    49                           ; Code-generator required, PIC16F887 Definitions
+    50                           ; 
+    51                           ; SFR Addresses
+    52  0000                     	;# 
+    53  0001                     	;# 
+    54  0002                     	;# 
+    55  0003                     	;# 
+    56  0004                     	;# 
+    57  0005                     	;# 
+    58  0006                     	;# 
+    59  0007                     	;# 
+    60  0008                     	;# 
+    61  0009                     	;# 
+    62  000A                     	;# 
+    63  000B                     	;# 
+    64  000C                     	;# 
+    65  000D                     	;# 
+    66  000E                     	;# 
+    67  000E                     	;# 
+    68  000F                     	;# 
+    69  0010                     	;# 
+    70  0011                     	;# 
+    71  0012                     	;# 
+    72  0013                     	;# 
+    73  0014                     	;# 
+    74  0015                     	;# 
+    75  0015                     	;# 
+    76  0016                     	;# 
+    77  0017                     	;# 
+    78  0018                     	;# 
+    79  0019                     	;# 
+    80  001A                     	;# 
+    81  001B                     	;# 
+    82  001B                     	;# 
+    83  001C                     	;# 
+    84  001D                     	;# 
+    85  001E                     	;# 
+    86  001F                     	;# 
+    87  0081                     	;# 
+    88  0085                     	;# 
+    89  0086                     	;# 
+    90  0087                     	;# 
+    91  0088                     	;# 
+    92  0089                     	;# 
+    93  008C                     	;# 
+    94  008D                     	;# 
+    95  008E                     	;# 
+    96  008F                     	;# 
+    97  0090                     	;# 
+    98  0091                     	;# 
+    99  0092                     	;# 
+   100  0093                     	;# 
+   101  0093                     	;# 
+   102  0093                     	;# 
+   103  0094                     	;# 
+   104  0095                     	;# 
+   105  0096                     	;# 
+   106  0097                     	;# 
+   107  0098                     	;# 
+   108  0099                     	;# 
+   109  009A                     	;# 
+   110  009B                     	;# 
+   111  009C                     	;# 
+   112  009D                     	;# 
+   113  009E                     	;# 
+   114  009F                     	;# 
+   115  0105                     	;# 
+   116  0107                     	;# 
+   117  0108                     	;# 
+   118  0109                     	;# 
+   119  010C                     	;# 
+   120  010C                     	;# 
+   121  010D                     	;# 
+   122  010E                     	;# 
+   123  010F                     	;# 
+   124  0185                     	;# 
+   125  0187                     	;# 
+   126  0188                     	;# 
+   127  0189                     	;# 
+   128  018C                     	;# 
+   129  018D                     	;# 
+   130  0000                     	;# 
+   131  0001                     	;# 
+   132  0002                     	;# 
+   133  0003                     	;# 
+   134  0004                     	;# 
+   135  0005                     	;# 
+   136  0006                     	;# 
+   137  0007                     	;# 
+   138  0008                     	;# 
+   139  0009                     	;# 
+   140  000A                     	;# 
+   141  000B                     	;# 
+   142  000C                     	;# 
+   143  000D                     	;# 
+   144  000E                     	;# 
+   145  000E                     	;# 
+   146  000F                     	;# 
+   147  0010                     	;# 
+   148  0011                     	;# 
+   149  0012                     	;# 
+   150  0013                     	;# 
+   151  0014                     	;# 
+   152  0015                     	;# 
+   153  0015                     	;# 
+   154  0016                     	;# 
+   155  0017                     	;# 
+   156  0018                     	;# 
+   157  0019                     	;# 
+   158  001A                     	;# 
+   159  001B                     	;# 
+   160  001B                     	;# 
+   161  001C                     	;# 
+   162  001D                     	;# 
+   163  001E                     	;# 
+   164  001F                     	;# 
+   165  0081                     	;# 
+   166  0085                     	;# 
+   167  0086                     	;# 
+   168  0087                     	;# 
+   169  0088                     	;# 
+   170  0089                     	;# 
+   171  008C                     	;# 
+   172  008D                     	;# 
+   173  008E                     	;# 
+   174  008F                     	;# 
+   175  0090                     	;# 
+   176  0091                     	;# 
+   177  0092                     	;# 
+   178  0093                     	;# 
+   179  0093                     	;# 
+   180  0093                     	;# 
+   181  0094                     	;# 
+   182  0095                     	;# 
+   183  0096                     	;# 
+   184  0097                     	;# 
+   185  0098                     	;# 
+   186  0099                     	;# 
+   187  009A                     	;# 
+   188  009B                     	;# 
+   189  009C                     	;# 
+   190  009D                     	;# 
+   191  009E                     	;# 
+   192  009F                     	;# 
+   193  0105                     	;# 
+   194  0107                     	;# 
+   195  0108                     	;# 
+   196  0109                     	;# 
+   197  010C                     	;# 
+   198  010C                     	;# 
+   199  010D                     	;# 
+   200  010E                     	;# 
+   201  010F                     	;# 
+   202  0185                     	;# 
+   203  0187                     	;# 
+   204  0188                     	;# 
+   205  0189                     	;# 
+   206  018C                     	;# 
+   207  018D                     	;# 
+   208                           
+   209                           	psect	idataBANK0
+   210  0651                     __pidataBANK0:
+   211                           
+   212                           ;initializer for _i
+   213  0651  3403               	retlw	3
+   214  0652  3400               	retlw	0
+   215  0001                     _TMR0	set	1
+   216  0008                     _PORTD	set	8
+   217  0007                     _PORTC	set	7
+   218  0005                     _PORTA	set	5
+   219  005A                     _T0IF	set	90
+   220  0029                     _RA1	set	41
+   221  002A                     _RA2	set	42
+   222  0028                     _RA0	set	40
+   223  002F                     _RA7	set	47
+   224  002E                     _RA6	set	46
+   225  002B                     _RA3	set	43
+   226  0081                     _OPTION_REG	set	129
+   227  0088                     _TRISD	set	136
+   228  0087                     _TRISC	set	135
+   229  0085                     _TRISA	set	133
+   230  0188                     _ANSEL	set	392
+   231                           
+   232                           	psect	cinit
+   233  07EE                     start_initialization:	
+   234                           ; #config settings
+   235                           
+   236  07EE                     __initialization:
+   237                           
+   238                           ; Initialize objects allocated to BANK0
+   239  07EE  120A  118A  2651  120A  118A  	fcall	__pidataBANK0	;fetch initializer
+   240  07F3  00A0               	movwf	__pdataBANK0& (0+127)
+   241  07F4  120A  118A  2652  120A  118A  	fcall	__pidataBANK0+1	;fetch initializer
+   242  07F9  00A1               	movwf	(__pdataBANK0+1)& (0+127)
+   243                           
+   244                           ; Clear objects allocated to COMMON
+   245  07FA  01FC               	clrf	__pbssCOMMON& (0+127)
+   246  07FB  01FD               	clrf	(__pbssCOMMON+1)& (0+127)
+   247  07FC                     end_of_initialization:	
+   248                           ;End of C runtime variable initialization code
+   249                           
+   250  07FC                     __end_of__initialization:
+   251  07FC  0183               	clrf	3
+   252  07FD  120A  118A  2F7F   	ljmp	_main	;jump to C main() function
+   253                           
+   254                           	psect	bssCOMMON
+   255  007C                     __pbssCOMMON:
+   256  007C                     _count:
+   257  007C                     	ds	2
+   258                           
+   259                           	psect	dataBANK0
+   260  0020                     __pdataBANK0:
+   261  0020                     _i:
+   262  0020                     	ds	2
+   263                           
+   264                           	psect	cstackCOMMON
+   265  0070                     __pcstackCOMMON:
+   266  0070                     ?_LCD:
+   267  0070                     ?_timer:	
+   268                           ; 1 bytes @ 0x0
+   269                           
+   270  0070                     ??_timer:	
+   271                           ; 1 bytes @ 0x0
+   272                           
+   273  0070                     ?_display:	
+   274                           ; 1 bytes @ 0x0
+   275                           
+   276  0070                     ?_main:	
+   277                           ; 1 bytes @ 0x0
+   278                           
+   279  0070                     ?_pulse:	
+   280                           ; 1 bytes @ 0x0
+   281                           
+   282  0070                     ??_pulse:	
+   283                           ; 1 bytes @ 0x0
+   284                           
+   285  0070                     ?___awdiv:	
+   286                           ; 1 bytes @ 0x0
+   287                           
+   288  0070                     ?___awmod:	
+   289                           ; 2 bytes @ 0x0
+   290                           
+   291  0070                     ___awdiv@divisor:	
+   292                           ; 2 bytes @ 0x0
+   293                           
+   294  0070                     ___awmod@divisor:	
+   295                           ; 2 bytes @ 0x0
+   296                           
+   297                           
+   298                           ; 2 bytes @ 0x0
+   299  0070                     	ds	2
+   300  0072                     ??_LCD:
+   301  0072                     LCD@g:	
+   302                           ; 1 bytes @ 0x2
+   303                           
+   304  0072                     ___awdiv@dividend:	
+   305                           ; 1 bytes @ 0x2
+   306                           
+   307  0072                     ___awmod@dividend:	
+   308                           ; 2 bytes @ 0x2
+   309                           
+   310                           
+   311                           ; 2 bytes @ 0x2
+   312  0072                     	ds	2
+   313  0074                     ??___awdiv:
+   314  0074                     ??___awmod:	
+   315                           ; 1 bytes @ 0x4
+   316                           
+   317                           
+   318                           ; 1 bytes @ 0x4
+   319  0074                     	ds	1
+   320  0075                     ___awdiv@counter:
+   321  0075                     ___awmod@counter:	
+   322                           ; 1 bytes @ 0x5
+   323                           
+   324                           
+   325                           ; 1 bytes @ 0x5
+   326  0075                     	ds	1
+   327  0076                     ___awdiv@sign:
+   328  0076                     ___awmod@sign:	
+   329                           ; 1 bytes @ 0x6
+   330                           
+   331                           
+   332                           ; 1 bytes @ 0x6
+   333  0076                     	ds	1
+   334  0077                     ___awdiv@quotient:
+   335                           
+   336                           ; 2 bytes @ 0x7
+   337  0077                     	ds	2
+   338  0079                     ??_display:
+   339                           
+   340                           ; 1 bytes @ 0x9
+   341  0079                     	ds	2
+   342  007B                     display@h:
+   343                           
+   344                           ; 1 bytes @ 0xB
+   345  007B                     	ds	1
+   346  007C                     ??_main:
+   347                           
+   348                           	psect	maintext
+   349  077F                     __pmaintext:	
+   350                           ; 1 bytes @ 0xC
+   351 ;;
+   352 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   353 ;;
+   354 ;; *************** function _main *****************
+   355 ;; Defined at:
+   356 ;;		line 21 in file "LED BUTTON GLOW USING TIMER.c"
+   357 ;; Parameters:    Size  Location     Type
+   358 ;;		None
+   359 ;; Auto vars:     Size  Location     Type
+   360 ;;		None
+   361 ;; Return value:  Size  Location     Type
+   362 ;;                  1    wreg      void 
+   363 ;; Registers used:
+   364 ;;		wreg, status,2, status,0, pclath, cstack
+   365 ;; Tracked objects:
+   366 ;;		On entry : B00/0
+   367 ;;		On exit  : 0/0
+   368 ;;		Unchanged: 0/0
+   369 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   370 ;;      Params:         0       0       0       0       0
+   371 ;;      Locals:         0       0       0       0       0
+   372 ;;      Temps:          0       0       0       0       0
+   373 ;;      Totals:         0       0       0       0       0
+   374 ;;Total ram usage:        0 bytes
+   375 ;; Hardware stack levels required when called: 2
+   376 ;; This function calls:
+   377 ;;		_LCD
+   378 ;;		_display
+   379 ;;		_timer
+   380 ;; This function is called by:
+   381 ;;		Startup code after reset
+   382 ;; This function uses a non-reentrant model
+   383 ;;
+   384                           
+   385                           
+   386                           ;psect for function _main
+   387  077F                     _main:
+   388  077F                     l890:	
+   389                           ;incstack = 0
+   390                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   391                           
+   392                           
+   393                           ;LED BUTTON GLOW USING TIMER.c: 23:     TRISA=0X48;
+   394  077F  3048               	movlw	72
+   395  0780  1683               	bsf	3,5	;RP0=1, select bank1
+   396  0781  1303               	bcf	3,6	;RP1=0, select bank1
+   397  0782  0085               	movwf	5	;volatile
+   398  0783                     l892:
+   399                           
+   400                           ;LED BUTTON GLOW USING TIMER.c: 24:     PORTA=0X00;
+   401  0783  1283               	bcf	3,5	;RP0=0, select bank0
+   402  0784  1303               	bcf	3,6	;RP1=0, select bank0
+   403  0785  0185               	clrf	5	;volatile
+   404  0786                     l894:
+   405                           
+   406                           ;LED BUTTON GLOW USING TIMER.c: 25:     TRISC=0X00;
+   407  0786  1683               	bsf	3,5	;RP0=1, select bank1
+   408  0787  1303               	bcf	3,6	;RP1=0, select bank1
+   409  0788  0187               	clrf	7	;volatile
+   410  0789                     l896:
+   411                           
+   412                           ;LED BUTTON GLOW USING TIMER.c: 26:     PORTC=0X00;
+   413  0789  1283               	bcf	3,5	;RP0=0, select bank0
+   414  078A  1303               	bcf	3,6	;RP1=0, select bank0
+   415  078B  0187               	clrf	7	;volatile
+   416  078C                     l898:
+   417                           
+   418                           ;LED BUTTON GLOW USING TIMER.c: 27:     TRISD=0X00;
+   419  078C  1683               	bsf	3,5	;RP0=1, select bank1
+   420  078D  1303               	bcf	3,6	;RP1=0, select bank1
+   421  078E  0188               	clrf	8	;volatile
+   422  078F                     l900:
+   423                           
+   424                           ;LED BUTTON GLOW USING TIMER.c: 28:     PORTD=0X00;
+   425  078F  1283               	bcf	3,5	;RP0=0, select bank0
+   426  0790  1303               	bcf	3,6	;RP1=0, select bank0
+   427  0791  0188               	clrf	8	;volatile
+   428  0792                     l902:
+   429                           
+   430                           ;LED BUTTON GLOW USING TIMER.c: 29:     ANSEL=0x00;
+   431  0792  1683               	bsf	3,5	;RP0=1, select bank3
+   432  0793  1703               	bsf	3,6	;RP1=1, select bank3
+   433  0794  0188               	clrf	8	;volatile
+   434                           
+   435                           ;LED BUTTON GLOW USING TIMER.c: 30:     OPTION_REG=0x06;
+   436  0795  3006               	movlw	6
+   437  0796  1683               	bsf	3,5	;RP0=1, select bank1
+   438  0797  1303               	bcf	3,6	;RP1=0, select bank1
+   439  0798  0081               	movwf	1	;volatile
+   440                           
+   441                           ;LED BUTTON GLOW USING TIMER.c: 31:     TMR0=131;
+   442  0799  3083               	movlw	131
+   443  079A  1283               	bcf	3,5	;RP0=0, select bank0
+   444  079B  1303               	bcf	3,6	;RP1=0, select bank0
+   445  079C  0081               	movwf	1	;volatile
+   446  079D                     l904:
+   447                           
+   448                           ;LED BUTTON GLOW USING TIMER.c: 32:     LCD(0x38);
+   449  079D  3038               	movlw	56
+   450  079E  120A  118A  265F  120A  118A  	fcall	_LCD
+   451  07A3                     l906:
+   452                           
+   453                           ;LED BUTTON GLOW USING TIMER.c: 33:     LCD(0x0e);
+   454  07A3  300E               	movlw	14
+   455  07A4  120A  118A  265F  120A  118A  	fcall	_LCD
+   456  07A9                     l908:
+   457                           
+   458                           ;LED BUTTON GLOW USING TIMER.c: 34:     {;LED BUTTON GLOW USING TIMER.c: 35:         LCD
+      +                          (0x80);
+   459  07A9  3080               	movlw	128
+   460  07AA  120A  118A  265F  120A  118A  	fcall	_LCD
+   461  07AF                     l910:
+   462                           
+   463                           ;LED BUTTON GLOW USING TIMER.c: 36:         if (RA3==1)
+   464  07AF  1283               	bcf	3,5	;RP0=0, select bank0
+   465  07B0  1303               	bcf	3,6	;RP1=0, select bank0
+   466  07B1  1D85               	btfss	5,3	;volatile
+   467  07B2  2FB4               	goto	u441
+   468  07B3  2FB5               	goto	u440
+   469  07B4                     u441:
+   470  07B4  2FCD               	goto	l49
+   471  07B5                     u440:
+   472  07B5  2FC7               	goto	l916
+   473  07B6                     l914:
+   474                           
+   475                           ;LED BUTTON GLOW USING TIMER.c: 39:             {;LED BUTTON GLOW USING TIMER.c: 40:    
+      +                                       LCD(0x80);
+   476  07B6  3080               	movlw	128
+   477  07B7  120A  118A  265F  120A  118A  	fcall	_LCD
+   478                           
+   479                           ;LED BUTTON GLOW USING TIMER.c: 41:                 timer();
+   480  07BC  120A  118A  2653  120A  118A  	fcall	_timer
+   481                           
+   482                           ;LED BUTTON GLOW USING TIMER.c: 42:                 display(count);
+   483  07C1  087C               	movf	_count,w
+   484  07C2  120A  118A  2685  120A  118A  	fcall	_display
+   485  07C7                     l916:
+   486                           
+   487                           ;LED BUTTON GLOW USING TIMER.c: 38:             while(RA6==0)
+   488  07C7  1283               	bcf	3,5	;RP0=0, select bank0
+   489  07C8  1303               	bcf	3,6	;RP1=0, select bank0
+   490  07C9  1F05               	btfss	5,6	;volatile
+   491  07CA  2FCC               	goto	u451
+   492  07CB  2FCD               	goto	u450
+   493  07CC                     u451:
+   494  07CC  2FB6               	goto	l914
+   495  07CD                     u450:
+   496  07CD                     l49:	
+   497                           ;LED BUTTON GLOW USING TIMER.c: 44:         }
+   498                           
+   499                           
+   500                           ;LED BUTTON GLOW USING TIMER.c: 45:         if (RA6==1)
+   501  07CD  1F05               	btfss	5,6	;volatile
+   502  07CE  2FD0               	goto	u461
+   503  07CF  2FD1               	goto	u460
+   504  07D0                     u461:
+   505  07D0  2FEB               	goto	l57
+   506  07D1                     u460:
+   507  07D1  2FE7               	goto	l926
+   508  07D2                     l920:
+   509                           
+   510                           ;LED BUTTON GLOW USING TIMER.c: 48:             {;LED BUTTON GLOW USING TIMER.c: 49:    
+      +                                       LCD(0x02);
+   511  07D2  3002               	movlw	2
+   512  07D3  120A  118A  265F  120A  118A  	fcall	_LCD
+   513                           
+   514                           ;LED BUTTON GLOW USING TIMER.c: 50:                 display(count);
+   515  07D8  087C               	movf	_count,w
+   516  07D9  120A  118A  2685  120A  118A  	fcall	_display
+   517  07DE                     l922:
+   518                           
+   519                           ;LED BUTTON GLOW USING TIMER.c: 51:                 RA7=1;
+   520  07DE  1283               	bcf	3,5	;RP0=0, select bank0
+   521  07DF  1303               	bcf	3,6	;RP1=0, select bank0
+   522  07E0  1785               	bsf	5,7	;volatile
+   523  07E1                     l924:
+   524                           
+   525                           ;LED BUTTON GLOW USING TIMER.c: 52:                 count--;
+   526  07E1  30FF               	movlw	255
+   527  07E2  07FC               	addwf	_count,f
+   528  07E3  1803               	skipnc
+   529  07E4  0AFD               	incf	_count+1,f
+   530  07E5  30FF               	movlw	255
+   531  07E6  07FD               	addwf	_count+1,f
+   532  07E7                     l926:
+   533                           
+   534                           ;LED BUTTON GLOW USING TIMER.c: 47:             while(count>=0)
+   535  07E7  1FFD               	btfss	_count+1,7
+   536  07E8  2FEA               	goto	u471
+   537  07E9  2FEB               	goto	u470
+   538  07EA                     u471:
+   539  07EA  2FD2               	goto	l920
+   540  07EB                     u470:
+   541  07EB                     l57:
+   542  07EB  120A  118A  2800   	ljmp	start
+   543  07EE                     __end_of_main:
+   544                           
+   545                           	psect	text1
+   546  0653                     __ptext1:	
+   547 ;; *************** function _timer *****************
+   548 ;; Defined at:
+   549 ;;		line 71 in file "LED BUTTON GLOW USING TIMER.c"
+   550 ;; Parameters:    Size  Location     Type
+   551 ;;		None
+   552 ;; Auto vars:     Size  Location     Type
+   553 ;;		None
+   554 ;; Return value:  Size  Location     Type
+   555 ;;                  1    wreg      void 
+   556 ;; Registers used:
+   557 ;;		wreg
+   558 ;; Tracked objects:
+   559 ;;		On entry : 0/0
+   560 ;;		On exit  : 0/0
+   561 ;;		Unchanged: 0/0
+   562 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   563 ;;      Params:         0       0       0       0       0
+   564 ;;      Locals:         0       0       0       0       0
+   565 ;;      Temps:          0       0       0       0       0
+   566 ;;      Totals:         0       0       0       0       0
+   567 ;;Total ram usage:        0 bytes
+   568 ;; Hardware stack levels used: 1
+   569 ;; This function calls:
+   570 ;;		Nothing
+   571 ;; This function is called by:
+   572 ;;		_main
+   573 ;; This function uses a non-reentrant model
+   574 ;;
+   575                           
+   576                           
+   577                           ;psect for function _timer
+   578  0653                     _timer:
+   579  0653                     l756:	
+   580                           ;incstack = 0
+   581                           ; Regs used in _timer: [wreg]
+   582                           
+   583                           
+   584                           ;LED BUTTON GLOW USING TIMER.c: 73:     if(T0IF==1)
+   585  0653  1D0B               	btfss	11,2	;volatile
+   586  0654  2E56               	goto	u201
+   587  0655  2E57               	goto	u200
+   588  0656                     u201:
+   589  0656  2E5E               	goto	l67
+   590  0657                     u200:
+   591  0657                     l758:
+   592                           
+   593                           ;LED BUTTON GLOW USING TIMER.c: 74:     {;LED BUTTON GLOW USING TIMER.c: 75:         cou
+      +                          nt++;
+   594  0657  3001               	movlw	1
+   595  0658  07FC               	addwf	_count,f
+   596  0659  1803               	skipnc
+   597  065A  0AFD               	incf	_count+1,f
+   598  065B  3000               	movlw	0
+   599  065C  07FD               	addwf	_count+1,f
+   600  065D                     l760:
+   601                           
+   602                           ;LED BUTTON GLOW USING TIMER.c: 76:         T0IF=0;
+   603  065D  110B               	bcf	11,2	;volatile
+   604  065E                     l67:
+   605  065E  0008               	return
+   606  065F                     __end_of_timer:
+   607                           
+   608                           	psect	text2
+   609  0685                     __ptext2:	
+   610 ;; *************** function _display *****************
+   611 ;; Defined at:
+   612 ;;		line 79 in file "LED BUTTON GLOW USING TIMER.c"
+   613 ;; Parameters:    Size  Location     Type
+   614 ;;  h               1    wreg     unsigned char 
+   615 ;; Auto vars:     Size  Location     Type
+   616 ;;  h               1   11[COMMON] unsigned char 
+   617 ;; Return value:  Size  Location     Type
+   618 ;;                  1    wreg      void 
+   619 ;; Registers used:
+   620 ;;		wreg, status,2, status,0, pclath, cstack
+   621 ;; Tracked objects:
+   622 ;;		On entry : 0/0
+   623 ;;		On exit  : 0/0
+   624 ;;		Unchanged: 0/0
+   625 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   626 ;;      Params:         0       0       0       0       0
+   627 ;;      Locals:         1       0       0       0       0
+   628 ;;      Temps:          2       0       0       0       0
+   629 ;;      Totals:         3       0       0       0       0
+   630 ;;Total ram usage:        3 bytes
+   631 ;; Hardware stack levels used: 1
+   632 ;; Hardware stack levels required when called: 1
+   633 ;; This function calls:
+   634 ;;		___awdiv
+   635 ;;		___awmod
+   636 ;;		_pulse
+   637 ;; This function is called by:
+   638 ;;		_main
+   639 ;; This function uses a non-reentrant model
+   640 ;;
+   641                           
+   642                           
+   643                           ;psect for function _display
+   644  0685                     _display:
+   645                           
+   646                           ;incstack = 0
+   647                           ; Regs used in _display: [wreg+status,2+status,0+pclath+cstack]
+   648                           ;display@h stored from wreg
+   649  0685  00FB               	movwf	display@h
+   650  0686                     l886:
+   651                           
+   652                           ;LED BUTTON GLOW USING TIMER.c: 79: void display(char h);LED BUTTON GLOW USING TIMER.c: 
+      +                          80: {;LED BUTTON GLOW USING TIMER.c: 81:     RA2=1;
+   653  0686  1283               	bcf	3,5	;RP0=0, select bank0
+   654  0687  1303               	bcf	3,6	;RP1=0, select bank0
+   655  0688  1505               	bsf	5,2	;volatile
+   656                           
+   657                           ;LED BUTTON GLOW USING TIMER.c: 82:     RA1=0;
+   658  0689  1085               	bcf	5,1	;volatile
+   659  068A                     l888:
+   660                           
+   661                           ;LED BUTTON GLOW USING TIMER.c: 83:     PORTC=(0x30+(h/10));
+   662  068A  300A               	movlw	10
+   663  068B  00F0               	movwf	___awdiv@divisor
+   664  068C  3000               	movlw	0
+   665  068D  00F1               	movwf	___awdiv@divisor+1
+   666  068E  087B               	movf	display@h,w
+   667  068F  00F9               	movwf	??_display
+   668  0690  01FA               	clrf	??_display+1
+   669  0691  0879               	movf	??_display,w
+   670  0692  00F2               	movwf	___awdiv@dividend
+   671  0693  087A               	movf	??_display+1,w
+   672  0694  00F3               	movwf	___awdiv@dividend+1
+   673  0695  120A  118A  2718  120A  118A  	fcall	___awdiv
+   674  069A  0870               	movf	?___awdiv,w
+   675  069B  3E30               	addlw	48
+   676  069C  1283               	bcf	3,5	;RP0=0, select bank0
+   677  069D  1303               	bcf	3,6	;RP1=0, select bank0
+   678  069E  0087               	movwf	7	;volatile
+   679                           
+   680                           ;LED BUTTON GLOW USING TIMER.c: 84:     pulse();
+   681  069F  120A  118A  266C  120A  118A  	fcall	_pulse
+   682                           
+   683                           ;LED BUTTON GLOW USING TIMER.c: 85:     PORTC=(0x30+(h%10));
+   684  06A4  300A               	movlw	10
+   685  06A5  00F0               	movwf	___awmod@divisor
+   686  06A6  3000               	movlw	0
+   687  06A7  00F1               	movwf	___awmod@divisor+1
+   688  06A8  087B               	movf	display@h,w
+   689  06A9  00F9               	movwf	??_display
+   690  06AA  01FA               	clrf	??_display+1
+   691  06AB  0879               	movf	??_display,w
+   692  06AC  00F2               	movwf	___awmod@dividend
+   693  06AD  087A               	movf	??_display+1,w
+   694  06AE  00F3               	movwf	___awmod@dividend+1
+   695  06AF  120A  118A  26BF  120A  118A  	fcall	___awmod
+   696  06B4  0870               	movf	?___awmod,w
+   697  06B5  3E30               	addlw	48
+   698  06B6  1283               	bcf	3,5	;RP0=0, select bank0
+   699  06B7  1303               	bcf	3,6	;RP1=0, select bank0
+   700  06B8  0087               	movwf	7	;volatile
+   701                           
+   702                           ;LED BUTTON GLOW USING TIMER.c: 86:     pulse();
+   703  06B9  120A  118A  266C  120A  118A  	fcall	_pulse
+   704  06BE                     l70:
+   705  06BE  0008               	return
+   706  06BF                     __end_of_display:
+   707                           
+   708                           	psect	text3
+   709  06BF                     __ptext3:	
+   710 ;; *************** function ___awmod *****************
+   711 ;; Defined at:
+   712 ;;		line 5 in file "C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c"
+   713 ;; Parameters:    Size  Location     Type
+   714 ;;  divisor         2    0[COMMON] int 
+   715 ;;  dividend        2    2[COMMON] int 
+   716 ;; Auto vars:     Size  Location     Type
+   717 ;;  sign            1    6[COMMON] unsigned char 
+   718 ;;  counter         1    5[COMMON] unsigned char 
+   719 ;; Return value:  Size  Location     Type
+   720 ;;                  2    0[COMMON] int 
+   721 ;; Registers used:
+   722 ;;		wreg, status,2, status,0
+   723 ;; Tracked objects:
+   724 ;;		On entry : 0/0
+   725 ;;		On exit  : 0/0
+   726 ;;		Unchanged: 0/0
+   727 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   728 ;;      Params:         4       0       0       0       0
+   729 ;;      Locals:         2       0       0       0       0
+   730 ;;      Temps:          1       0       0       0       0
+   731 ;;      Totals:         7       0       0       0       0
+   732 ;;Total ram usage:        7 bytes
+   733 ;; Hardware stack levels used: 1
+   734 ;; This function calls:
+   735 ;;		Nothing
+   736 ;; This function is called by:
+   737 ;;		_display
+   738 ;; This function uses a non-reentrant model
+   739 ;;
+   740                           
+   741                           
+   742                           ;psect for function ___awmod
+   743  06BF                     ___awmod:
+   744  06BF                     l848:	
+   745                           ;incstack = 0
+   746                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+   747                           
+   748  06BF  01F6               	clrf	___awmod@sign
+   749  06C0                     l850:
+   750  06C0  1FF3               	btfss	___awmod@dividend+1,7
+   751  06C1  2EC3               	goto	u351
+   752  06C2  2EC4               	goto	u350
+   753  06C3                     u351:
+   754  06C3  2ECB               	goto	l856
+   755  06C4                     u350:
+   756  06C4                     l852:
+   757  06C4  09F2               	comf	___awmod@dividend,f
+   758  06C5  09F3               	comf	___awmod@dividend+1,f
+   759  06C6  0AF2               	incf	___awmod@dividend,f
+   760  06C7  1903               	skipnz
+   761  06C8  0AF3               	incf	___awmod@dividend+1,f
+   762  06C9                     l854:
+   763  06C9  01F6               	clrf	___awmod@sign
+   764  06CA  0AF6               	incf	___awmod@sign,f
+   765  06CB                     l856:
+   766  06CB  1FF1               	btfss	___awmod@divisor+1,7
+   767  06CC  2ECE               	goto	u361
+   768  06CD  2ECF               	goto	u360
+   769  06CE                     u361:
+   770  06CE  2ED4               	goto	l860
+   771  06CF                     u360:
+   772  06CF                     l858:
+   773  06CF  09F0               	comf	___awmod@divisor,f
+   774  06D0  09F1               	comf	___awmod@divisor+1,f
+   775  06D1  0AF0               	incf	___awmod@divisor,f
+   776  06D2  1903               	skipnz
+   777  06D3  0AF1               	incf	___awmod@divisor+1,f
+   778  06D4                     l860:
+   779  06D4  0870               	movf	___awmod@divisor,w
+   780  06D5  0471               	iorwf	___awmod@divisor+1,w
+   781  06D6  1903               	btfsc	3,2
+   782  06D7  2ED9               	goto	u371
+   783  06D8  2EDA               	goto	u370
+   784  06D9                     u371:
+   785  06D9  2F09               	goto	l878
+   786  06DA                     u370:
+   787  06DA                     l862:
+   788  06DA  01F5               	clrf	___awmod@counter
+   789  06DB  0AF5               	incf	___awmod@counter,f
+   790  06DC  2EE8               	goto	l868
+   791  06DD                     l864:
+   792  06DD  3001               	movlw	1
+   793  06DE                     u385:
+   794  06DE  1003               	clrc
+   795  06DF  0DF0               	rlf	___awmod@divisor,f
+   796  06E0  0DF1               	rlf	___awmod@divisor+1,f
+   797  06E1  3EFF               	addlw	-1
+   798  06E2  1D03               	skipz
+   799  06E3  2EDE               	goto	u385
+   800  06E4                     l866:
+   801  06E4  3001               	movlw	1
+   802  06E5  00F4               	movwf	??___awmod
+   803  06E6  0874               	movf	??___awmod,w
+   804  06E7  07F5               	addwf	___awmod@counter,f
+   805  06E8                     l868:
+   806  06E8  1FF1               	btfss	___awmod@divisor+1,7
+   807  06E9  2EEB               	goto	u391
+   808  06EA  2EEC               	goto	u390
+   809  06EB                     u391:
+   810  06EB  2EDD               	goto	l864
+   811  06EC                     u390:
+   812  06EC                     l870:
+   813  06EC  0871               	movf	___awmod@divisor+1,w
+   814  06ED  0273               	subwf	___awmod@dividend+1,w
+   815  06EE  1D03               	skipz
+   816  06EF  2EF2               	goto	u405
+   817  06F0  0870               	movf	___awmod@divisor,w
+   818  06F1  0272               	subwf	___awmod@dividend,w
+   819  06F2                     u405:
+   820  06F2  1C03               	skipc
+   821  06F3  2EF5               	goto	u401
+   822  06F4  2EF6               	goto	u400
+   823  06F5                     u401:
+   824  06F5  2EFC               	goto	l874
+   825  06F6                     u400:
+   826  06F6                     l872:
+   827  06F6  0870               	movf	___awmod@divisor,w
+   828  06F7  02F2               	subwf	___awmod@dividend,f
+   829  06F8  0871               	movf	___awmod@divisor+1,w
+   830  06F9  1C03               	skipc
+   831  06FA  03F3               	decf	___awmod@dividend+1,f
+   832  06FB  02F3               	subwf	___awmod@dividend+1,f
+   833  06FC                     l874:
+   834  06FC  3001               	movlw	1
+   835  06FD                     u415:
+   836  06FD  1003               	clrc
+   837  06FE  0CF1               	rrf	___awmod@divisor+1,f
+   838  06FF  0CF0               	rrf	___awmod@divisor,f
+   839  0700  3EFF               	addlw	-1
+   840  0701  1D03               	skipz
+   841  0702  2EFD               	goto	u415
+   842  0703                     l876:
+   843  0703  3001               	movlw	1
+   844  0704  02F5               	subwf	___awmod@counter,f
+   845  0705  1D03               	btfss	3,2
+   846  0706  2F08               	goto	u421
+   847  0707  2F09               	goto	u420
+   848  0708                     u421:
+   849  0708  2EEC               	goto	l870
+   850  0709                     u420:
+   851  0709                     l878:
+   852  0709  0876               	movf	___awmod@sign,w
+   853  070A  1903               	btfsc	3,2
+   854  070B  2F0D               	goto	u431
+   855  070C  2F0E               	goto	u430
+   856  070D                     u431:
+   857  070D  2F13               	goto	l882
+   858  070E                     u430:
+   859  070E                     l880:
+   860  070E  09F2               	comf	___awmod@dividend,f
+   861  070F  09F3               	comf	___awmod@dividend+1,f
+   862  0710  0AF2               	incf	___awmod@dividend,f
+   863  0711  1903               	skipnz
+   864  0712  0AF3               	incf	___awmod@dividend+1,f
+   865  0713                     l882:
+   866  0713  0873               	movf	___awmod@dividend+1,w
+   867  0714  00F1               	movwf	?___awmod+1
+   868  0715  0872               	movf	___awmod@dividend,w
+   869  0716  00F0               	movwf	?___awmod
+   870  0717                     l322:
+   871  0717  0008               	return
+   872  0718                     __end_of___awmod:
+   873                           
+   874                           	psect	text4
+   875  0718                     __ptext4:	
+   876 ;; *************** function ___awdiv *****************
+   877 ;; Defined at:
+   878 ;;		line 5 in file "C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c"
+   879 ;; Parameters:    Size  Location     Type
+   880 ;;  divisor         2    0[COMMON] int 
+   881 ;;  dividend        2    2[COMMON] int 
+   882 ;; Auto vars:     Size  Location     Type
+   883 ;;  quotient        2    7[COMMON] int 
+   884 ;;  sign            1    6[COMMON] unsigned char 
+   885 ;;  counter         1    5[COMMON] unsigned char 
+   886 ;; Return value:  Size  Location     Type
+   887 ;;                  2    0[COMMON] int 
+   888 ;; Registers used:
+   889 ;;		wreg, status,2, status,0
+   890 ;; Tracked objects:
+   891 ;;		On entry : 0/0
+   892 ;;		On exit  : 0/0
+   893 ;;		Unchanged: 0/0
+   894 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   895 ;;      Params:         4       0       0       0       0
+   896 ;;      Locals:         4       0       0       0       0
+   897 ;;      Temps:          1       0       0       0       0
+   898 ;;      Totals:         9       0       0       0       0
+   899 ;;Total ram usage:        9 bytes
+   900 ;; Hardware stack levels used: 1
+   901 ;; This function calls:
+   902 ;;		Nothing
+   903 ;; This function is called by:
+   904 ;;		_display
+   905 ;; This function uses a non-reentrant model
+   906 ;;
+   907                           
+   908                           
+   909                           ;psect for function ___awdiv
+   910  0718                     ___awdiv:
+   911  0718                     l804:	
+   912                           ;incstack = 0
+   913                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+   914                           
+   915  0718  01F6               	clrf	___awdiv@sign
+   916  0719                     l806:
+   917  0719  1FF1               	btfss	___awdiv@divisor+1,7
+   918  071A  2F1C               	goto	u251
+   919  071B  2F1D               	goto	u250
+   920  071C                     u251:
+   921  071C  2F24               	goto	l812
+   922  071D                     u250:
+   923  071D                     l808:
+   924  071D  09F0               	comf	___awdiv@divisor,f
+   925  071E  09F1               	comf	___awdiv@divisor+1,f
+   926  071F  0AF0               	incf	___awdiv@divisor,f
+   927  0720  1903               	skipnz
+   928  0721  0AF1               	incf	___awdiv@divisor+1,f
+   929  0722                     l810:
+   930  0722  01F6               	clrf	___awdiv@sign
+   931  0723  0AF6               	incf	___awdiv@sign,f
+   932  0724                     l812:
+   933  0724  1FF3               	btfss	___awdiv@dividend+1,7
+   934  0725  2F27               	goto	u261
+   935  0726  2F28               	goto	u260
+   936  0727                     u261:
+   937  0727  2F31               	goto	l818
+   938  0728                     u260:
+   939  0728                     l814:
+   940  0728  09F2               	comf	___awdiv@dividend,f
+   941  0729  09F3               	comf	___awdiv@dividend+1,f
+   942  072A  0AF2               	incf	___awdiv@dividend,f
+   943  072B  1903               	skipnz
+   944  072C  0AF3               	incf	___awdiv@dividend+1,f
+   945  072D                     l816:
+   946  072D  3001               	movlw	1
+   947  072E  00F4               	movwf	??___awdiv
+   948  072F  0874               	movf	??___awdiv,w
+   949  0730  06F6               	xorwf	___awdiv@sign,f
+   950  0731                     l818:
+   951  0731  01F7               	clrf	___awdiv@quotient
+   952  0732  01F8               	clrf	___awdiv@quotient+1
+   953  0733                     l820:
+   954  0733  0870               	movf	___awdiv@divisor,w
+   955  0734  0471               	iorwf	___awdiv@divisor+1,w
+   956  0735  1903               	btfsc	3,2
+   957  0736  2F38               	goto	u271
+   958  0737  2F39               	goto	u270
+   959  0738                     u271:
+   960  0738  2F70               	goto	l840
+   961  0739                     u270:
+   962  0739                     l822:
+   963  0739  01F5               	clrf	___awdiv@counter
+   964  073A  0AF5               	incf	___awdiv@counter,f
+   965  073B  2F47               	goto	l828
+   966  073C                     l824:
+   967  073C  3001               	movlw	1
+   968  073D                     u285:
+   969  073D  1003               	clrc
+   970  073E  0DF0               	rlf	___awdiv@divisor,f
+   971  073F  0DF1               	rlf	___awdiv@divisor+1,f
+   972  0740  3EFF               	addlw	-1
+   973  0741  1D03               	skipz
+   974  0742  2F3D               	goto	u285
+   975  0743                     l826:
+   976  0743  3001               	movlw	1
+   977  0744  00F4               	movwf	??___awdiv
+   978  0745  0874               	movf	??___awdiv,w
+   979  0746  07F5               	addwf	___awdiv@counter,f
+   980  0747                     l828:
+   981  0747  1FF1               	btfss	___awdiv@divisor+1,7
+   982  0748  2F4A               	goto	u291
+   983  0749  2F4B               	goto	u290
+   984  074A                     u291:
+   985  074A  2F3C               	goto	l824
+   986  074B                     u290:
+   987  074B                     l830:
+   988  074B  3001               	movlw	1
+   989  074C                     u305:
+   990  074C  1003               	clrc
+   991  074D  0DF7               	rlf	___awdiv@quotient,f
+   992  074E  0DF8               	rlf	___awdiv@quotient+1,f
+   993  074F  3EFF               	addlw	-1
+   994  0750  1D03               	skipz
+   995  0751  2F4C               	goto	u305
+   996  0752  0871               	movf	___awdiv@divisor+1,w
+   997  0753  0273               	subwf	___awdiv@dividend+1,w
+   998  0754  1D03               	skipz
+   999  0755  2F58               	goto	u315
+  1000  0756  0870               	movf	___awdiv@divisor,w
+  1001  0757  0272               	subwf	___awdiv@dividend,w
+  1002  0758                     u315:
+  1003  0758  1C03               	skipc
+  1004  0759  2F5B               	goto	u311
+  1005  075A  2F5C               	goto	u310
+  1006  075B                     u311:
+  1007  075B  2F63               	goto	l836
+  1008  075C                     u310:
+  1009  075C                     l832:
+  1010  075C  0870               	movf	___awdiv@divisor,w
+  1011  075D  02F2               	subwf	___awdiv@dividend,f
+  1012  075E  0871               	movf	___awdiv@divisor+1,w
+  1013  075F  1C03               	skipc
+  1014  0760  03F3               	decf	___awdiv@dividend+1,f
+  1015  0761  02F3               	subwf	___awdiv@dividend+1,f
+  1016  0762                     l834:
+  1017  0762  1477               	bsf	___awdiv@quotient,0
+  1018  0763                     l836:
+  1019  0763  3001               	movlw	1
+  1020  0764                     u325:
+  1021  0764  1003               	clrc
+  1022  0765  0CF1               	rrf	___awdiv@divisor+1,f
+  1023  0766  0CF0               	rrf	___awdiv@divisor,f
+  1024  0767  3EFF               	addlw	-1
+  1025  0768  1D03               	skipz
+  1026  0769  2F64               	goto	u325
+  1027  076A                     l838:
+  1028  076A  3001               	movlw	1
+  1029  076B  02F5               	subwf	___awdiv@counter,f
+  1030  076C  1D03               	btfss	3,2
+  1031  076D  2F6F               	goto	u331
+  1032  076E  2F70               	goto	u330
+  1033  076F                     u331:
+  1034  076F  2F4B               	goto	l830
+  1035  0770                     u330:
+  1036  0770                     l840:
+  1037  0770  0876               	movf	___awdiv@sign,w
+  1038  0771  1903               	btfsc	3,2
+  1039  0772  2F74               	goto	u341
+  1040  0773  2F75               	goto	u340
+  1041  0774                     u341:
+  1042  0774  2F7A               	goto	l844
+  1043  0775                     u340:
+  1044  0775                     l842:
+  1045  0775  09F7               	comf	___awdiv@quotient,f
+  1046  0776  09F8               	comf	___awdiv@quotient+1,f
+  1047  0777  0AF7               	incf	___awdiv@quotient,f
+  1048  0778  1903               	skipnz
+  1049  0779  0AF8               	incf	___awdiv@quotient+1,f
+  1050  077A                     l844:
+  1051  077A  0878               	movf	___awdiv@quotient+1,w
+  1052  077B  00F1               	movwf	?___awdiv+1
+  1053  077C  0877               	movf	___awdiv@quotient,w
+  1054  077D  00F0               	movwf	?___awdiv
+  1055  077E                     l309:
+  1056  077E  0008               	return
+  1057  077F                     __end_of___awdiv:
+  1058                           
+  1059                           	psect	text5
+  1060  065F                     __ptext5:	
+  1061 ;; *************** function _LCD *****************
+  1062 ;; Defined at:
+  1063 ;;		line 64 in file "LED BUTTON GLOW USING TIMER.c"
+  1064 ;; Parameters:    Size  Location     Type
+  1065 ;;  g               1    wreg     unsigned char 
+  1066 ;; Auto vars:     Size  Location     Type
+  1067 ;;  g               1    2[COMMON] unsigned char 
+  1068 ;; Return value:  Size  Location     Type
+  1069 ;;                  1    wreg      void 
+  1070 ;; Registers used:
+  1071 ;;		wreg, status,2, status,0, pclath, cstack
+  1072 ;; Tracked objects:
+  1073 ;;		On entry : 0/0
+  1074 ;;		On exit  : 0/0
+  1075 ;;		Unchanged: 0/0
+  1076 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1077 ;;      Params:         0       0       0       0       0
+  1078 ;;      Locals:         1       0       0       0       0
+  1079 ;;      Temps:          0       0       0       0       0
+  1080 ;;      Totals:         1       0       0       0       0
+  1081 ;;Total ram usage:        1 bytes
+  1082 ;; Hardware stack levels used: 1
+  1083 ;; Hardware stack levels required when called: 1
+  1084 ;; This function calls:
+  1085 ;;		_pulse
+  1086 ;; This function is called by:
+  1087 ;;		_main
+  1088 ;; This function uses a non-reentrant model
+  1089 ;;
+  1090                           
+  1091                           
+  1092                           ;psect for function _LCD
+  1093  065F                     _LCD:
+  1094                           
+  1095                           ;incstack = 0
+  1096                           ; Regs used in _LCD: [wreg+status,2+status,0+pclath+cstack]
+  1097                           ;LCD@g stored from wreg
+  1098  065F  00F2               	movwf	LCD@g
+  1099  0660                     l750:
+  1100                           
+  1101                           ;LED BUTTON GLOW USING TIMER.c: 64: void LCD(char g);LED BUTTON GLOW USING TIMER.c: 65: 
+      +                          {;LED BUTTON GLOW USING TIMER.c: 66:     RA2=0;
+  1102  0660  1283               	bcf	3,5	;RP0=0, select bank0
+  1103  0661  1303               	bcf	3,6	;RP1=0, select bank0
+  1104  0662  1105               	bcf	5,2	;volatile
+  1105                           
+  1106                           ;LED BUTTON GLOW USING TIMER.c: 67:     RA1=0;
+  1107  0663  1085               	bcf	5,1	;volatile
+  1108  0664                     l752:
+  1109                           
+  1110                           ;LED BUTTON GLOW USING TIMER.c: 68:     PORTC=g;
+  1111  0664  0872               	movf	LCD@g,w
+  1112  0665  0087               	movwf	7	;volatile
+  1113  0666                     l754:
+  1114                           
+  1115                           ;LED BUTTON GLOW USING TIMER.c: 69:     pulse();
+  1116  0666  120A  118A  266C  120A  118A  	fcall	_pulse
+  1117  066B                     l63:
+  1118  066B  0008               	return
+  1119  066C                     __end_of_LCD:
+  1120                           
+  1121                           	psect	text6
+  1122  066C                     __ptext6:	
+  1123 ;; *************** function _pulse *****************
+  1124 ;; Defined at:
+  1125 ;;		line 57 in file "LED BUTTON GLOW USING TIMER.c"
+  1126 ;; Parameters:    Size  Location     Type
+  1127 ;;		None
+  1128 ;; Auto vars:     Size  Location     Type
+  1129 ;;		None
+  1130 ;; Return value:  Size  Location     Type
+  1131 ;;                  1    wreg      void 
+  1132 ;; Registers used:
+  1133 ;;		wreg
+  1134 ;; Tracked objects:
+  1135 ;;		On entry : 0/0
+  1136 ;;		On exit  : 0/0
+  1137 ;;		Unchanged: 0/0
+  1138 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1139 ;;      Params:         0       0       0       0       0
+  1140 ;;      Locals:         0       0       0       0       0
+  1141 ;;      Temps:          2       0       0       0       0
+  1142 ;;      Totals:         2       0       0       0       0
+  1143 ;;Total ram usage:        2 bytes
+  1144 ;; Hardware stack levels used: 1
+  1145 ;; This function calls:
+  1146 ;;		Nothing
+  1147 ;; This function is called by:
+  1148 ;;		_LCD
+  1149 ;;		_display
+  1150 ;; This function uses a non-reentrant model
+  1151 ;;
+  1152                           
+  1153                           
+  1154                           ;psect for function _pulse
+  1155  066C                     _pulse:
+  1156  066C                     l662:	
+  1157                           ;incstack = 0
+  1158                           ; Regs used in _pulse: [wreg]
+  1159                           
+  1160                           
+  1161                           ;LED BUTTON GLOW USING TIMER.c: 59:     RA0=1;
+  1162  066C  1283               	bcf	3,5	;RP0=0, select bank0
+  1163  066D  1303               	bcf	3,6	;RP1=0, select bank0
+  1164  066E  1405               	bsf	5,0	;volatile
+  1165  066F                     l664:
+  1166                           
+  1167                           ;LED BUTTON GLOW USING TIMER.c: 60:     _delay((unsigned long)((500)*(400000/4000.0)));
+  1168  066F  3041               	movlw	65
+  1169  0670  00F1               	movwf	??_pulse+1
+  1170  0671  30EE               	movlw	238
+  1171  0672  00F0               	movwf	??_pulse
+  1172  0673                     u487:
+  1173  0673  0BF0               	decfsz	??_pulse,f
+  1174  0674  2E73               	goto	u487
+  1175  0675  0BF1               	decfsz	??_pulse+1,f
+  1176  0676  2E73               	goto	u487
+  1177  0677  0000               	nop
+  1178  0678                     l666:
+  1179                           
+  1180                           ;LED BUTTON GLOW USING TIMER.c: 61:     RA0=0;
+  1181  0678  1283               	bcf	3,5	;RP0=0, select bank0
+  1182  0679  1303               	bcf	3,6	;RP1=0, select bank0
+  1183  067A  1005               	bcf	5,0	;volatile
+  1184                           
+  1185                           ;LED BUTTON GLOW USING TIMER.c: 62:     _delay((unsigned long)((500)*(400000/4000.0)));
+  1186  067B  3041               	movlw	65
+  1187  067C  00F1               	movwf	??_pulse+1
+  1188  067D  30EE               	movlw	238
+  1189  067E  00F0               	movwf	??_pulse
+  1190  067F                     u497:
+  1191  067F  0BF0               	decfsz	??_pulse,f
+  1192  0680  2E7F               	goto	u497
+  1193  0681  0BF1               	decfsz	??_pulse+1,f
+  1194  0682  2E7F               	goto	u497
+  1195  0683  0000               	nop
+  1196  0684                     l60:
+  1197  0684  0008               	return
+  1198  0685                     __end_of_pulse:
+  1199  007E                     btemp	set	126	;btemp
+  1200  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        2
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     12      14
+    BANK0            80      0       2
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_display
+    _display->___awdiv
+    _LCD->_pulse
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     959
+                                _LCD
+                            _display
+                              _timer
+ ---------------------------------------------------------------------------------
+ (1) _timer                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _display                                              3     3      0     944
+                                              9 COMMON     3     3      0
+                            ___awdiv
+                            ___awmod
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (2) ___awmod                                              7     3      4     448
+                                              0 COMMON     7     3      4
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              9     5      4     452
+                                              0 COMMON     9     5      4
+ ---------------------------------------------------------------------------------
+ (1) _LCD                                                  1     1      0      15
+                                              2 COMMON     1     1      0
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (2) _pulse                                                2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _LCD
+     _pulse
+   _display
+     ___awdiv
+     ___awmod
+     _pulse
+   _timer
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0       2       5        2.5%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      C       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      10      12        0.0%
+ABS                  0      0      10       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Sun Mar 26 12:06:25 2023
+
+                      _i 0020                       l60 0684                       l70 06BE  
+                     l63 066B                       l57 07EB                       l49 07CD  
+                     l67 065E             ___awdiv@sign 0076                      l322 0717  
+                    l309 077E                      l810 0722                      l820 0733  
+                    l812 0724                      l804 0718                      l900 078F  
+                    l662 066C                      l750 0660                      l830 074B  
+                    l822 0739                      l814 0728                      l806 0719  
+                    l910 07AF                      l902 0792                      l664 066F  
+                    l752 0664                      l832 075C                      l824 073C  
+                    l840 0770                      l816 072D                      l808 071D  
+                    l760 065D                      l920 07D2                      l904 079D  
+                    l666 0678                      l754 0666                      l842 0775  
+                    l834 0762                      l826 0743                      l818 0731  
+                    l850 06C0                      l922 07DE                      l914 07B6  
+                    l906 07A3                      l844 077A                      l836 0763  
+                    l828 0747                      l860 06D4                      l852 06C4  
+                    l756 0653                      l924 07E1                      l916 07C7  
+                    l908 07A9                      l838 076A                      l870 06EC  
+                    l862 06DA                      l854 06C9                      l758 0657  
+                    l926 07E7                      l880 070E                      l872 06F6  
+                    l864 06DD                      l856 06CB                      l848 06BF  
+                    l882 0713                      l874 06FC                      l866 06E4  
+                    l858 06CF                      l890 077F                      l876 0703  
+                    l868 06E8                      l892 0783                      l878 0709  
+                    l886 0686                      l894 0786                      l888 068A  
+                    l896 0789                      l898 078C                      _RA0 0028  
+                    _LCD 065F                      _RA1 0029                      _RA2 002A  
+                    _RA3 002B                      _RA6 002E                      _RA7 002F  
+                    u200 0657                      u201 0656                      u310 075C  
+                    u311 075B                      u400 06F6                      u305 074C  
+                    u401 06F5                      u330 0770                      u250 071D  
+                    u331 076F                      u315 0758                      u251 071C  
+                    u340 0775                      u260 0728                      u420 0709  
+                    u341 0774                      u325 0764                      u261 0727  
+                    u421 0708                      u405 06F2                      u270 0739  
+                    u430 070E                      u350 06C4                      u271 0738  
+                    u431 070D                      u415 06FD                      u351 06C3  
+                    u360 06CF                      u440 07B5                      u361 06CE  
+                    u441 07B4                      u290 074B                      u370 06DA  
+                    u450 07CD                      u291 074A                      u371 06D9  
+                    u451 07CC                      u460 07D1                      u285 073D  
+                    u461 07D0                      u390 06EC                      u470 07EB  
+                    u391 06EB                      u471 07EA                      u385 06DE  
+                    u487 0673                      u497 067F             ___awmod@sign 0076  
+                   LCD@g 0072                     ?_LCD 0070                     _T0IF 005A  
+                   _TMR0 0001                     _main 077F                     btemp 007E  
+                   start 0000                    ??_LCD 0072                    ?_main 0070  
+        __end_of___awdiv 077F          __end_of___awmod 0718                    _ANSEL 0188  
+        ___awdiv@divisor 0070          ___awdiv@counter 0075                    _PORTA 0005  
+                  _PORTC 0007                    _PORTD 0008                    _TRISA 0085  
+                  _TRISC 0087                    _TRISD 0088          __end_of_display 06BF  
+                  _count 007C                    _timer 0653                    _pulse 066C  
+                  status 0003                    wtemp0 007E          __initialization 07EE  
+           __end_of_main 07EE                   ??_main 007C         ___awdiv@dividend 0072  
+                 ?_timer 0070                   ?_pulse 0070                ??___awdiv 0074  
+              ??___awmod 0074         ___awdiv@quotient 0077          ___awmod@divisor 0070  
+        ___awmod@counter 0075                ??_display 0079  __end_of__initialization 07FC  
+         __pcstackCOMMON 0070             __pidataBANK0 0651            __end_of_timer 065F  
+          __end_of_pulse 0685                  ??_timer 0070                  ??_pulse 0070  
+             __pmaintext 077F                  ___awdiv 0718                  ___awmod 06BF  
+                __ptext1 0653                  __ptext2 0685                  __ptext3 06BF  
+                __ptext4 0718                  __ptext5 065F                  __ptext6 066C  
+                _display 0685             __size_of_LCD 000D         ___awmod@dividend 0072  
+   end_of_initialization 07FC      start_initialization 07EE              __end_of_LCD 066C  
+            __pdataBANK0 0020              __pbssCOMMON 007C                ___latbits 0002  
+               ?___awdiv 0070                 ?___awmod 0070                 ?_display 0070  
+         __size_of_timer 000C           __size_of_pulse 0019         __size_of___awdiv 0067  
+       __size_of___awmod 0059         __size_of_display 003A            __size_of_main 006F  
+               display@h 007B               _OPTION_REG 0081  

@@ -1,0 +1,549 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Tue Mar 14 14:25:14 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	dabs	1,0x7E,2
+     8  0000                     
+     9                           ; Version 2.20
+    10                           ; Generated 12/02/2020 GMT
+    11                           ; 
+    12                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    13                           ; All rights reserved.
+    14                           ; 
+    15                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    16                           ; 
+    17                           ; Redistribution and use in source and binary forms, with or without modification, are
+    18                           ; permitted provided that the following conditions are met:
+    19                           ; 
+    20                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    21                           ;        conditions and the following disclaimer.
+    22                           ; 
+    23                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    24                           ;        of conditions and the following disclaimer in the documentation and/or other
+    25                           ;        materials provided with the distribution.
+    26                           ; 
+    27                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    28                           ;        software without specific prior written permission.
+    29                           ; 
+    30                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    31                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    32                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    33                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    34                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    35                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    36                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    37                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    38                           ; 
+    39                           ; 
+    40                           ; Code-generator required, PIC16F887 Definitions
+    41                           ; 
+    42                           ; SFR Addresses
+    43  0000                     	;# 
+    44  0001                     	;# 
+    45  0002                     	;# 
+    46  0003                     	;# 
+    47  0004                     	;# 
+    48  0005                     	;# 
+    49  0006                     	;# 
+    50  0007                     	;# 
+    51  0008                     	;# 
+    52  0009                     	;# 
+    53  000A                     	;# 
+    54  000B                     	;# 
+    55  000C                     	;# 
+    56  000D                     	;# 
+    57  000E                     	;# 
+    58  000E                     	;# 
+    59  000F                     	;# 
+    60  0010                     	;# 
+    61  0011                     	;# 
+    62  0012                     	;# 
+    63  0013                     	;# 
+    64  0014                     	;# 
+    65  0015                     	;# 
+    66  0015                     	;# 
+    67  0016                     	;# 
+    68  0017                     	;# 
+    69  0018                     	;# 
+    70  0019                     	;# 
+    71  001A                     	;# 
+    72  001B                     	;# 
+    73  001B                     	;# 
+    74  001C                     	;# 
+    75  001D                     	;# 
+    76  001E                     	;# 
+    77  001F                     	;# 
+    78  0081                     	;# 
+    79  0085                     	;# 
+    80  0086                     	;# 
+    81  0087                     	;# 
+    82  0088                     	;# 
+    83  0089                     	;# 
+    84  008C                     	;# 
+    85  008D                     	;# 
+    86  008E                     	;# 
+    87  008F                     	;# 
+    88  0090                     	;# 
+    89  0091                     	;# 
+    90  0092                     	;# 
+    91  0093                     	;# 
+    92  0093                     	;# 
+    93  0093                     	;# 
+    94  0094                     	;# 
+    95  0095                     	;# 
+    96  0096                     	;# 
+    97  0097                     	;# 
+    98  0098                     	;# 
+    99  0099                     	;# 
+   100  009A                     	;# 
+   101  009B                     	;# 
+   102  009C                     	;# 
+   103  009D                     	;# 
+   104  009E                     	;# 
+   105  009F                     	;# 
+   106  0105                     	;# 
+   107  0107                     	;# 
+   108  0108                     	;# 
+   109  0109                     	;# 
+   110  010C                     	;# 
+   111  010C                     	;# 
+   112  010D                     	;# 
+   113  010E                     	;# 
+   114  010F                     	;# 
+   115  0185                     	;# 
+   116  0187                     	;# 
+   117  0188                     	;# 
+   118  0189                     	;# 
+   119  018C                     	;# 
+   120  018D                     	;# 
+   121  0000                     	;# 
+   122  0001                     	;# 
+   123  0002                     	;# 
+   124  0003                     	;# 
+   125  0004                     	;# 
+   126  0005                     	;# 
+   127  0006                     	;# 
+   128  0007                     	;# 
+   129  0008                     	;# 
+   130  0009                     	;# 
+   131  000A                     	;# 
+   132  000B                     	;# 
+   133  000C                     	;# 
+   134  000D                     	;# 
+   135  000E                     	;# 
+   136  000E                     	;# 
+   137  000F                     	;# 
+   138  0010                     	;# 
+   139  0011                     	;# 
+   140  0012                     	;# 
+   141  0013                     	;# 
+   142  0014                     	;# 
+   143  0015                     	;# 
+   144  0015                     	;# 
+   145  0016                     	;# 
+   146  0017                     	;# 
+   147  0018                     	;# 
+   148  0019                     	;# 
+   149  001A                     	;# 
+   150  001B                     	;# 
+   151  001B                     	;# 
+   152  001C                     	;# 
+   153  001D                     	;# 
+   154  001E                     	;# 
+   155  001F                     	;# 
+   156  0081                     	;# 
+   157  0085                     	;# 
+   158  0086                     	;# 
+   159  0087                     	;# 
+   160  0088                     	;# 
+   161  0089                     	;# 
+   162  008C                     	;# 
+   163  008D                     	;# 
+   164  008E                     	;# 
+   165  008F                     	;# 
+   166  0090                     	;# 
+   167  0091                     	;# 
+   168  0092                     	;# 
+   169  0093                     	;# 
+   170  0093                     	;# 
+   171  0093                     	;# 
+   172  0094                     	;# 
+   173  0095                     	;# 
+   174  0096                     	;# 
+   175  0097                     	;# 
+   176  0098                     	;# 
+   177  0099                     	;# 
+   178  009A                     	;# 
+   179  009B                     	;# 
+   180  009C                     	;# 
+   181  009D                     	;# 
+   182  009E                     	;# 
+   183  009F                     	;# 
+   184  0105                     	;# 
+   185  0107                     	;# 
+   186  0108                     	;# 
+   187  0109                     	;# 
+   188  010C                     	;# 
+   189  010C                     	;# 
+   190  010D                     	;# 
+   191  010E                     	;# 
+   192  010F                     	;# 
+   193  0185                     	;# 
+   194  0187                     	;# 
+   195  0188                     	;# 
+   196  0189                     	;# 
+   197  018C                     	;# 
+   198  018D                     	;# 
+   199  0007                     _PORTC	set	7
+   200  003F                     _RC7	set	63
+   201  0039                     _RC1	set	57
+   202  0038                     _RC0	set	56
+   203  0087                     _TRISC	set	135
+   204                           
+   205                           	psect	cinit
+   206  07FC                     start_initialization:	
+   207                           ; #config settings
+   208                           
+   209  07FC                     __initialization:
+   210  07FC                     end_of_initialization:	
+   211                           ;End of C runtime variable initialization code
+   212                           
+   213  07FC                     __end_of__initialization:
+   214  07FC  0183               	clrf	3
+   215  07FD  120A  118A  2F9E   	ljmp	_main	;jump to C main() function
+   216                           
+   217                           	psect	cstackCOMMON
+   218  0070                     __pcstackCOMMON:
+   219  0070                     ?_main:
+   220  0070                     ??_main:	
+   221                           ; 1 bytes @ 0x0
+   222                           
+   223                           
+   224                           ; 1 bytes @ 0x0
+   225  0070                     	ds	3
+   226  0073                     main@i:
+   227                           
+   228                           ; 2 bytes @ 0x3
+   229  0073                     	ds	2
+   230  0075                     main@j:
+   231                           
+   232                           ; 2 bytes @ 0x5
+   233  0075                     	ds	2
+   234                           
+   235                           	psect	maintext
+   236  079E                     __pmaintext:	
+   237 ;;
+   238 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   239 ;;
+   240 ;; *************** function _main *****************
+   241 ;; Defined at:
+   242 ;;		line 10 in file "COUNTWISE LED GLOW.c"
+   243 ;; Parameters:    Size  Location     Type
+   244 ;;		None
+   245 ;; Auto vars:     Size  Location     Type
+   246 ;;  j               2    5[COMMON] int 
+   247 ;;  i               2    3[COMMON] int 
+   248 ;; Return value:  Size  Location     Type
+   249 ;;                  1    wreg      void 
+   250 ;; Registers used:
+   251 ;;		wreg, status,2
+   252 ;; Tracked objects:
+   253 ;;		On entry : B00/0
+   254 ;;		On exit  : 0/0
+   255 ;;		Unchanged: 0/0
+   256 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   257 ;;      Params:         0       0       0       0       0
+   258 ;;      Locals:         4       0       0       0       0
+   259 ;;      Temps:          3       0       0       0       0
+   260 ;;      Totals:         7       0       0       0       0
+   261 ;;Total ram usage:        7 bytes
+   262 ;; This function calls:
+   263 ;;		Nothing
+   264 ;; This function is called by:
+   265 ;;		Startup code after reset
+   266 ;; This function uses a non-reentrant model
+   267 ;;
+   268                           
+   269                           
+   270                           ;psect for function _main
+   271  079E                     _main:
+   272  079E                     l620:	
+   273                           ;incstack = 0
+   274                           ; Regs used in _main: [wreg+status,2]
+   275                           
+   276                           
+   277                           ;COUNTWISE LED GLOW.c: 12:     TRISC=0x03;
+   278  079E  3003               	movlw	3
+   279  079F  1683               	bsf	3,5	;RP0=1, select bank1
+   280  07A0  1303               	bcf	3,6	;RP1=0, select bank1
+   281  07A1  0087               	movwf	7	;volatile
+   282  07A2                     l622:
+   283                           
+   284                           ;COUNTWISE LED GLOW.c: 13:     PORTC=0X00;
+   285  07A2  1283               	bcf	3,5	;RP0=0, select bank0
+   286  07A3  1303               	bcf	3,6	;RP1=0, select bank0
+   287  07A4  0187               	clrf	7	;volatile
+   288  07A5                     l624:
+   289                           
+   290                           ;COUNTWISE LED GLOW.c: 14:     int i,j;;COUNTWISE LED GLOW.c: 15:     i=0;
+   291  07A5  01F3               	clrf	main@i
+   292  07A6  01F4               	clrf	main@i+1
+   293  07A7                     l626:
+   294  07A7                     l628:
+   295                           
+   296                           ;COUNTWISE LED GLOW.c: 18:     {;COUNTWISE LED GLOW.c: 19:         if(RC0==1)
+   297  07A7  1283               	bcf	3,5	;RP0=0, select bank0
+   298  07A8  1303               	bcf	3,6	;RP1=0, select bank0
+   299  07A9  1C07               	btfss	7,0	;volatile
+   300  07AA  2FAC               	goto	u11
+   301  07AB  2FAD               	goto	u10
+   302  07AC                     u11:
+   303  07AC  2FB7               	goto	l18
+   304  07AD                     u10:
+   305  07AD                     l630:
+   306                           
+   307                           ;COUNTWISE LED GLOW.c: 20:         {;COUNTWISE LED GLOW.c: 21:                i++;
+   308  07AD  3001               	movlw	1
+   309  07AE  07F3               	addwf	main@i,f
+   310  07AF  1803               	skipnc
+   311  07B0  0AF4               	incf	main@i+1,f
+   312  07B1  3000               	movlw	0
+   313  07B2  07F4               	addwf	main@i+1,f
+   314  07B3                     l19:	
+   315                           ;COUNTWISE LED GLOW.c: 22:                while(RC0==1);
+   316                           
+   317  07B3  1807               	btfsc	7,0	;volatile
+   318  07B4  2FB6               	goto	u21
+   319  07B5  2FB7               	goto	u20
+   320  07B6                     u21:
+   321  07B6  2FB3               	goto	l19
+   322  07B7                     u20:
+   323  07B7                     l18:	
+   324                           ;COUNTWISE LED GLOW.c: 23:         }
+   325                           
+   326                           
+   327                           ;COUNTWISE LED GLOW.c: 24:         if((RC1==1)&&(RC0==0))
+   328  07B7  1C87               	btfss	7,1	;volatile
+   329  07B8  2FBA               	goto	u31
+   330  07B9  2FBB               	goto	u30
+   331  07BA                     u31:
+   332  07BA  2FA7               	goto	l628
+   333  07BB                     u30:
+   334  07BB                     l632:
+   335  07BB  1807               	btfsc	7,0	;volatile
+   336  07BC  2FBE               	goto	u41
+   337  07BD  2FBF               	goto	u40
+   338  07BE                     u41:
+   339  07BE  2FA7               	goto	l628
+   340  07BF                     u40:
+   341  07BF                     l634:
+   342                           
+   343                           ;COUNTWISE LED GLOW.c: 25:         {;COUNTWISE LED GLOW.c: 26:             for(j=0;j<i;j
+      +                          ++)
+   344  07BF  01F5               	clrf	main@j
+   345  07C0  01F6               	clrf	main@j+1
+   346  07C1  2FE8               	goto	l23
+   347  07C2                     l24:
+   348                           
+   349                           ;COUNTWISE LED GLOW.c: 27:             {;COUNTWISE LED GLOW.c: 28:                 RC7=1
+      +                          ;
+   350  07C2  1283               	bcf	3,5	;RP0=0, select bank0
+   351  07C3  1303               	bcf	3,6	;RP1=0, select bank0
+   352  07C4  1787               	bsf	7,7	;volatile
+   353  07C5                     l636:
+   354                           
+   355                           ;COUNTWISE LED GLOW.c: 29:                 _delay((unsigned long)((2000)*(400000/4000.0)
+      +                          ));
+   356  07C5  3002               	movlw	2
+   357  07C6  00F2               	movwf	??_main+2
+   358  07C7  3004               	movlw	4
+   359  07C8  00F1               	movwf	??_main+1
+   360  07C9  30BA               	movlw	186
+   361  07CA  00F0               	movwf	??_main
+   362  07CB                     u67:
+   363  07CB  0BF0               	decfsz	??_main,f
+   364  07CC  2FCB               	goto	u67
+   365  07CD  0BF1               	decfsz	??_main+1,f
+   366  07CE  2FCB               	goto	u67
+   367  07CF  0BF2               	decfsz	??_main+2,f
+   368  07D0  2FCB               	goto	u67
+   369  07D1  0000               	nop
+   370  07D2                     l638:
+   371                           
+   372                           ;COUNTWISE LED GLOW.c: 30:                 RC7=0;
+   373  07D2  1283               	bcf	3,5	;RP0=0, select bank0
+   374  07D3  1303               	bcf	3,6	;RP1=0, select bank0
+   375  07D4  1387               	bcf	7,7	;volatile
+   376                           
+   377                           ;COUNTWISE LED GLOW.c: 31:                 _delay((unsigned long)((2000)*(400000/4000.0)
+      +                          ));
+   378  07D5  3002               	movlw	2
+   379  07D6  00F2               	movwf	??_main+2
+   380  07D7  3004               	movlw	4
+   381  07D8  00F1               	movwf	??_main+1
+   382  07D9  30BA               	movlw	186
+   383  07DA  00F0               	movwf	??_main
+   384  07DB                     u77:
+   385  07DB  0BF0               	decfsz	??_main,f
+   386  07DC  2FDB               	goto	u77
+   387  07DD  0BF1               	decfsz	??_main+1,f
+   388  07DE  2FDB               	goto	u77
+   389  07DF  0BF2               	decfsz	??_main+2,f
+   390  07E0  2FDB               	goto	u77
+   391  07E1  0000               	nop
+   392                           
+   393                           ;COUNTWISE LED GLOW.c: 32:             }
+   394  07E2  3001               	movlw	1
+   395  07E3  07F5               	addwf	main@j,f
+   396  07E4  1803               	skipnc
+   397  07E5  0AF6               	incf	main@j+1,f
+   398  07E6  3000               	movlw	0
+   399  07E7  07F6               	addwf	main@j+1,f
+   400  07E8                     l23:
+   401  07E8  0876               	movf	main@j+1,w
+   402  07E9  3A80               	xorlw	128
+   403  07EA  00F0               	movwf	??_main
+   404  07EB  0874               	movf	main@i+1,w
+   405  07EC  3A80               	xorlw	128
+   406  07ED  0270               	subwf	??_main,w
+   407  07EE  1D03               	skipz
+   408  07EF  2FF2               	goto	u55
+   409  07F0  0873               	movf	main@i,w
+   410  07F1  0275               	subwf	main@j,w
+   411  07F2                     u55:
+   412  07F2  1C03               	skipc
+   413  07F3  2FF5               	goto	u51
+   414  07F4  2FF6               	goto	u50
+   415  07F5                     u51:
+   416  07F5  2FC2               	goto	l24
+   417  07F6                     u50:
+   418  07F6                     l640:
+   419                           
+   420                           ;COUNTWISE LED GLOW.c: 33:             i=0;
+   421  07F6  01F3               	clrf	main@i
+   422  07F7  01F4               	clrf	main@i+1
+   423  07F8  2FA7               	goto	l628
+   424  07F9  120A  118A  2800   	ljmp	start
+   425  07FC                     __end_of_main:
+   426  007E                     btemp	set	126	;btemp
+   427  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      7       7
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 7     7      0      30
+                                              0 COMMON     7     7      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      7       7       1       50.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Tue Mar 14 14:25:14 2023
+
+                     l23 07E8                       l24 07C2                       l18 07B7  
+                     l19 07B3                       u10 07AD                       u11 07AC  
+                     u20 07B7                       u21 07B6                       u30 07BB  
+                     u31 07BA                       u40 07BF                       u41 07BE  
+                     u50 07F6                       u51 07F5                       u55 07F2  
+                     u67 07CB                       u77 07DB                      l620 079E  
+                    l630 07AD                      l622 07A2                      l640 07F6  
+                    l632 07BB                      l624 07A5                      l634 07BF  
+                    l626 07A7                      l636 07C5                      l628 07A7  
+                    l638 07D2                      _RC0 0038                      _RC1 0039  
+                    _RC7 003F                     _main 079E                     btemp 007E  
+                   start 0000                    ?_main 0070                    _PORTC 0007  
+                  _TRISC 0087                    main@i 0073                    main@j 0075  
+                  status 0003                    wtemp0 007E          __initialization 07FC  
+           __end_of_main 07FC                   ??_main 0070  __end_of__initialization 07FC  
+         __pcstackCOMMON 0070               __pmaintext 079E     end_of_initialization 07FC  
+    start_initialization 07FC                ___latbits 0002            __size_of_main 005E  

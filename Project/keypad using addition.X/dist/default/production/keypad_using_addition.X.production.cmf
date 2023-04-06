@@ -1,0 +1,503 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+end_init CODE 0 0 0 3 2
+$dist/default/production\keypad_using_addition.X.production.o
+cinit CODE 0 7EA 7EA 16 2
+text1 CODE 0 56E 56E 1B 2
+text2 CODE 0 539 539 1A 2
+text3 CODE 0 553 553 1B 2
+text4 CODE 0 6A9 6A9 141 2
+text5 CODE 0 5E9 5E9 59 2
+text6 CODE 0 642 642 67 2
+text7 CODE 0 4FA 4FA 13 2
+text8 CODE 0 520 520 19 2
+maintext CODE 0 5A7 5A7 42 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 3E 3E 8 1
+inittext CODE 0 50D 50D 13 2
+bssBANK0 BANK0 1 46 46 4 1
+idataBANK0 CODE 0 589 589 1E 2
+dataBANK0 BANK0 1 20 20 1E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 4A-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 4A-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-4F9 2
+CONST 800-1FFF 2
+ENTRY 3-4F9 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-4F9 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+CONFIG 2007-2008 2
+EEDATA 2100-21FF 2
+STRCODE 3-4F9 2
+STRCODE 800-1FFF 2
+STRING 3-4F9 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\keypad_using_addition.X.production.o
+7EA cinit CODE >518:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EA cinit CODE >521:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EA cinit CODE >577:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EB cinit CODE >578:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EC cinit CODE >579:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7ED cinit CODE >580:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EE cinit CODE >581:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7EF cinit CODE >582:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F0 cinit CODE >583:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F1 cinit CODE >584:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F2 cinit CODE >585:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F3 cinit CODE >586:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F8 cinit CODE >590:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7F9 cinit CODE >591:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7FA cinit CODE >592:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7FB cinit CODE >593:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7FC cinit CODE >599:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7FC cinit CODE >601:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+7FD cinit CODE >602:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+520 text8 CODE >41:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+520 text8 CODE >43:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+523 text8 CODE >44:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+52C text8 CODE >45:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+52F text8 CODE >46:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+538 text8 CODE >47:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+4FA text7 CODE >48:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+4FA text7 CODE >50:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+504 text7 CODE >51:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+505 text7 CODE >52:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+507 text7 CODE >53:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+50C text7 CODE >54:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+642 text6 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+642 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+643 text6 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+647 text6 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+64A text6 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+64C text6 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+64E text6 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+652 text6 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+655 text6 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+657 text6 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+65B text6 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+65D text6 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+663 text6 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+665 text6 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+666 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+667 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+66B text6 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+66D text6 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+671 text6 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+675 text6 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+676 text6 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+67A text6 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+67C text6 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+67E text6 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+682 text6 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+686 text6 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+689 text6 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+68C text6 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+68D text6 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+68E text6 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+692 text6 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+694 text6 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+69A text6 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+69F text6 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6A2 text6 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6A4 text6 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6A8 text6 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+5E9 text5 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5E9 text5 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5EA text5 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5EE text5 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5F1 text5 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5F3 text5 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5F5 text5 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5F9 text5 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5FC text5 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+5FE text5 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+604 text5 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+606 text5 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+607 text5 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+608 text5 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+60C text5 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+60E text5 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+612 text5 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+616 text5 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+618 text5 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+61C text5 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+620 text5 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+623 text5 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+626 text5 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+627 text5 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+62B text5 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+62D text5 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+633 text5 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+638 text5 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+63B text5 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+63D text5 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+641 text5 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+6A9 text4 CODE >76:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6A9 text4 CODE >78:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6AF text4 CODE >80:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6C2 text4 CODE >81:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6D8 text4 CODE >82:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6DC text4 CODE >82:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6E0 text4 CODE >83:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6E4 text4 CODE >83:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6E8 text4 CODE >84:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6EC text4 CODE >85:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6EC text4 CODE >86:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+6F0 text4 CODE >88:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+703 text4 CODE >89:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+719 text4 CODE >90:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+71D text4 CODE >90:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+721 text4 CODE >91:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+725 text4 CODE >91:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+729 text4 CODE >92:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+72D text4 CODE >93:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+72D text4 CODE >94:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+731 text4 CODE >96:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+744 text4 CODE >97:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+75A text4 CODE >98:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+75E text4 CODE >98:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+762 text4 CODE >99:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+766 text4 CODE >99:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+76A text4 CODE >100:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+76E text4 CODE >101:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+76E text4 CODE >102:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+779 text4 CODE >104:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+78C text4 CODE >105:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+79F text4 CODE >105:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7AC text4 CODE >106:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7BF text4 CODE >106:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7CC text4 CODE >107:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7D0 text4 CODE >107:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7D4 text4 CODE >108:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7D8 text4 CODE >110:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7DD text4 CODE >110:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7E1 text4 CODE >110:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7E5 text4 CODE >112:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+7E9 text4 CODE >114:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+553 text3 CODE >55:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+553 text3 CODE >57:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+556 text3 CODE >58:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+557 text3 CODE >59:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+558 text3 CODE >60:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+56D text3 CODE >61:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+539 text2 CODE >62:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+539 text2 CODE >64:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+53C text2 CODE >65:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+53D text2 CODE >66:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+53E text2 CODE >67:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+552 text2 CODE >68:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+56E text1 CODE >69:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+56E text1 CODE >71:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+571 text1 CODE >72:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+572 text1 CODE >73:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+573 text1 CODE >74:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+588 text1 CODE >75:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5A7 maintext CODE >22:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5A7 maintext CODE >24:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5AA maintext CODE >25:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5AD maintext CODE >26:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5B0 maintext CODE >27:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5B3 maintext CODE >28:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5B7 maintext CODE >29:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5BA maintext CODE >30:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5BD maintext CODE >31:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5BE maintext CODE >32:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5CA maintext CODE >33:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5D6 maintext CODE >36:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5DB maintext CODE >37:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+5E0 maintext CODE >38:D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+50D inittext CODE >551:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+50D inittext CODE >552:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+50E inittext CODE >553:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+50F inittext CODE >554:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+510 inittext CODE >555:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+511 inittext CODE >562:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+511 inittext CODE >563:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+516 inittext CODE >564:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+517 inittext CODE >565:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+518 inittext CODE >566:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+519 inittext CODE >567:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51A inittext CODE >568:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51B inittext CODE >569:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51C inittext CODE >570:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51D inittext CODE >571:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51E inittext CODE >572:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+51F inittext CODE >573:C:\Users\star\AppData\Local\Temp\xcAs3l8.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_i 48 0 BANK0 1 bssBANK0 dist/default/production\keypad_using_addition.X.production.o
+___latbits 2 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+LCD@g 79 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+LCD@h 7B 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+__end_of_third_seg B12 0 CODE 0 text1 dist/default/production\keypad_using_addition.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+_main B4E 0 CODE 0 maintext dist/default/production\keypad_using_addition.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+start 0 0 CODE 0 init C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+__size_of_third_seg 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__size_of___awmod 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__end_of_second_seg AA6 0 CODE 0 text2 dist/default/production\keypad_using_addition.X.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__Hpowerup 0 0 CODE 0 powerup -
+_third_seg ADC 0 CODE 0 text1 dist/default/production\keypad_using_addition.X.production.o
+___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+wtemp0 7E 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+_ANSELH 189 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__end_of___awdiv D52 0 CODE 0 text6 dist/default/production\keypad_using_addition.X.production.o
+__end_of___awmod C84 0 CODE 0 text5 dist/default/production\keypad_using_addition.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+___stacklo 0 0 ABS 0 - C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+__size_of_pulse 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+start_initialization FD4 0 CODE 0 cinit dist/default/production\keypad_using_addition.X.production.o
+__end_of_first_seg ADC 0 CODE 0 text3 dist/default/production\keypad_using_addition.X.production.o
+__end_of_keypad FD4 0 CODE 0 text4 dist/default/production\keypad_using_addition.X.production.o
+__size_of_first_seg 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__pcstackBANK0 3E 0 BANK0 1 cstackBANK0 dist/default/production\keypad_using_addition.X.production.o
+_first_seg AA6 0 CODE 0 text3 dist/default/production\keypad_using_addition.X.production.o
+__size_of_second_seg 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FD4 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+__Linittext 0 0 ABS 0 inittext -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_LCD 9F4 0 CODE 0 text7 dist/default/production\keypad_using_addition.X.production.o
+_RA0 28 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RA1 29 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RA2 2A 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD0 40 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD1 41 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD2 42 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD3 43 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD4 44 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD5 45 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_RD6 46 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__S0 800 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_add 38 0 BANK0 1 dataBANK0 dist/default/production\keypad_using_addition.X.production.o
+_num 20 0 BANK0 1 dataBANK0 dist/default/production\keypad_using_addition.X.production.o
+__end_of_LCD A1A 0 CODE 0 text7 dist/default/production\keypad_using_addition.X.production.o
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\star\AppData\Local\Temp\xcAs3l8.o
+__pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\keypad_using_addition.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_keypad D52 0 CODE 0 text4 dist/default/production\keypad_using_addition.X.production.o
+___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+___awdiv C84 0 CODE 0 text6 dist/default/production\keypad_using_addition.X.production.o
+___awmod BD2 0 CODE 0 text5 dist/default/production\keypad_using_addition.X.production.o
+__pmaintext B4E 0 CODE 0 maintext dist/default/production\keypad_using_addition.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Hinittext 0 0 ABS 0 inittext -
+__size_of_keypad 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+init_fetch0 A1A 0 CODE 0 inittext dist/default/production\keypad_using_addition.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\keypad_using_addition.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+keypad@a 3E 0 BANK0 1 cstackBANK0 dist/default/production\keypad_using_addition.X.production.o
+keypad@b 40 0 BANK0 1 cstackBANK0 dist/default/production\keypad_using_addition.X.production.o
+keypad@c 42 0 BANK0 1 cstackBANK0 dist/default/production\keypad_using_addition.X.production.o
+keypad@d 44 0 BANK0 1 cstackBANK0 dist/default/production\keypad_using_addition.X.production.o
+__Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+?___awmod 70 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__ptext1 ADC 0 CODE 0 text1 dist/default/production\keypad_using_addition.X.production.o
+__ptext2 A72 0 CODE 0 text2 dist/default/production\keypad_using_addition.X.production.o
+__ptext3 AA6 0 CODE 0 text3 dist/default/production\keypad_using_addition.X.production.o
+__ptext4 D52 0 CODE 0 text4 dist/default/production\keypad_using_addition.X.production.o
+__ptext5 BD2 0 CODE 0 text5 dist/default/production\keypad_using_addition.X.production.o
+__ptext6 C84 0 CODE 0 text6 dist/default/production\keypad_using_addition.X.production.o
+__ptext7 9F4 0 CODE 0 text7 dist/default/production\keypad_using_addition.X.production.o
+__ptext8 A40 0 CODE 0 text8 dist/default/production\keypad_using_addition.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\keypad_using_addition.X.production.o
+___awmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__pidataBANK0 B12 0 CODE 0 idataBANK0 dist/default/production\keypad_using_addition.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\keypad_using_addition.X.production.o
+__Hend_init 6 0 CODE 0 end_init -
+init_ram0 A22 0 CODE 0 inittext dist/default/production\keypad_using_addition.X.production.o
+__end_of_main BD2 0 CODE 0 maintext dist/default/production\keypad_using_addition.X.production.o
+_ANSEL 188 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_PORTC 7 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_PORTD 8 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_TRISC 87 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+_TRISD 88 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__end_of_pulse A72 0 CODE 0 text8 dist/default/production\keypad_using_addition.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_pulse A40 0 CODE 0 text8 dist/default/production\keypad_using_addition.X.production.o
+_total 46 0 BANK0 1 bssBANK0 dist/default/production\keypad_using_addition.X.production.o
+__size_of_LCD 0 0 ABS 0 - dist/default/production\keypad_using_addition.X.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+_second_seg A72 0 CODE 0 text2 dist/default/production\keypad_using_addition.X.production.o
+__initialization FD4 0 CODE 0 cinit dist/default/production\keypad_using_addition.X.production.o
+__pbssBANK0 46 0 BANK0 1 bssBANK0 dist/default/production\keypad_using_addition.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7EA FD4 16 2
+text1 0 56E ADC 1B 2
+text2 0 539 A72 1A 2
+text3 0 553 AA6 1B 2
+text4 0 6A9 D52 141 2
+text5 0 5E9 BD2 59 2
+text6 0 642 C84 67 2
+text7 0 4FA 9F4 13 2
+text8 0 520 A40 19 2
+maintext 0 5A7 B4E 42 2
+cstackCOMMON 1 70 70 E 1
+inittext 0 50D A1A 13 2
+reset_vec 0 0 0 3 2
+idataBANK0 0 589 B12 1E 2
+dataBANK0 1 20 20 2A 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

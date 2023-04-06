@@ -1,0 +1,648 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Mon Mar 20 12:09:44 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataCOMMON,global,class=CODE,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	dabs	1,0x7E,2
+    13  0000                     
+    14                           ; Version 2.20
+    15                           ; Generated 12/02/2020 GMT
+    16                           ; 
+    17                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    18                           ; All rights reserved.
+    19                           ; 
+    20                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    21                           ; 
+    22                           ; Redistribution and use in source and binary forms, with or without modification, are
+    23                           ; permitted provided that the following conditions are met:
+    24                           ; 
+    25                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    26                           ;        conditions and the following disclaimer.
+    27                           ; 
+    28                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    29                           ;        of conditions and the following disclaimer in the documentation and/or other
+    30                           ;        materials provided with the distribution.
+    31                           ; 
+    32                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    33                           ;        software without specific prior written permission.
+    34                           ; 
+    35                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    36                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    37                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    38                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    39                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    40                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    41                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    42                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    43                           ; 
+    44                           ; 
+    45                           ; Code-generator required, PIC16F887 Definitions
+    46                           ; 
+    47                           ; SFR Addresses
+    48  0000                     	;# 
+    49  0001                     	;# 
+    50  0002                     	;# 
+    51  0003                     	;# 
+    52  0004                     	;# 
+    53  0005                     	;# 
+    54  0006                     	;# 
+    55  0007                     	;# 
+    56  0008                     	;# 
+    57  0009                     	;# 
+    58  000A                     	;# 
+    59  000B                     	;# 
+    60  000C                     	;# 
+    61  000D                     	;# 
+    62  000E                     	;# 
+    63  000E                     	;# 
+    64  000F                     	;# 
+    65  0010                     	;# 
+    66  0011                     	;# 
+    67  0012                     	;# 
+    68  0013                     	;# 
+    69  0014                     	;# 
+    70  0015                     	;# 
+    71  0015                     	;# 
+    72  0016                     	;# 
+    73  0017                     	;# 
+    74  0018                     	;# 
+    75  0019                     	;# 
+    76  001A                     	;# 
+    77  001B                     	;# 
+    78  001B                     	;# 
+    79  001C                     	;# 
+    80  001D                     	;# 
+    81  001E                     	;# 
+    82  001F                     	;# 
+    83  0081                     	;# 
+    84  0085                     	;# 
+    85  0086                     	;# 
+    86  0087                     	;# 
+    87  0088                     	;# 
+    88  0089                     	;# 
+    89  008C                     	;# 
+    90  008D                     	;# 
+    91  008E                     	;# 
+    92  008F                     	;# 
+    93  0090                     	;# 
+    94  0091                     	;# 
+    95  0092                     	;# 
+    96  0093                     	;# 
+    97  0093                     	;# 
+    98  0093                     	;# 
+    99  0094                     	;# 
+   100  0095                     	;# 
+   101  0096                     	;# 
+   102  0097                     	;# 
+   103  0098                     	;# 
+   104  0099                     	;# 
+   105  009A                     	;# 
+   106  009B                     	;# 
+   107  009C                     	;# 
+   108  009D                     	;# 
+   109  009E                     	;# 
+   110  009F                     	;# 
+   111  0105                     	;# 
+   112  0107                     	;# 
+   113  0108                     	;# 
+   114  0109                     	;# 
+   115  010C                     	;# 
+   116  010C                     	;# 
+   117  010D                     	;# 
+   118  010E                     	;# 
+   119  010F                     	;# 
+   120  0185                     	;# 
+   121  0187                     	;# 
+   122  0188                     	;# 
+   123  0189                     	;# 
+   124  018C                     	;# 
+   125  018D                     	;# 
+   126  0000                     	;# 
+   127  0001                     	;# 
+   128  0002                     	;# 
+   129  0003                     	;# 
+   130  0004                     	;# 
+   131  0005                     	;# 
+   132  0006                     	;# 
+   133  0007                     	;# 
+   134  0008                     	;# 
+   135  0009                     	;# 
+   136  000A                     	;# 
+   137  000B                     	;# 
+   138  000C                     	;# 
+   139  000D                     	;# 
+   140  000E                     	;# 
+   141  000E                     	;# 
+   142  000F                     	;# 
+   143  0010                     	;# 
+   144  0011                     	;# 
+   145  0012                     	;# 
+   146  0013                     	;# 
+   147  0014                     	;# 
+   148  0015                     	;# 
+   149  0015                     	;# 
+   150  0016                     	;# 
+   151  0017                     	;# 
+   152  0018                     	;# 
+   153  0019                     	;# 
+   154  001A                     	;# 
+   155  001B                     	;# 
+   156  001B                     	;# 
+   157  001C                     	;# 
+   158  001D                     	;# 
+   159  001E                     	;# 
+   160  001F                     	;# 
+   161  0081                     	;# 
+   162  0085                     	;# 
+   163  0086                     	;# 
+   164  0087                     	;# 
+   165  0088                     	;# 
+   166  0089                     	;# 
+   167  008C                     	;# 
+   168  008D                     	;# 
+   169  008E                     	;# 
+   170  008F                     	;# 
+   171  0090                     	;# 
+   172  0091                     	;# 
+   173  0092                     	;# 
+   174  0093                     	;# 
+   175  0093                     	;# 
+   176  0093                     	;# 
+   177  0094                     	;# 
+   178  0095                     	;# 
+   179  0096                     	;# 
+   180  0097                     	;# 
+   181  0098                     	;# 
+   182  0099                     	;# 
+   183  009A                     	;# 
+   184  009B                     	;# 
+   185  009C                     	;# 
+   186  009D                     	;# 
+   187  009E                     	;# 
+   188  009F                     	;# 
+   189  0105                     	;# 
+   190  0107                     	;# 
+   191  0108                     	;# 
+   192  0109                     	;# 
+   193  010C                     	;# 
+   194  010C                     	;# 
+   195  010D                     	;# 
+   196  010E                     	;# 
+   197  010F                     	;# 
+   198  0185                     	;# 
+   199  0187                     	;# 
+   200  0188                     	;# 
+   201  0189                     	;# 
+   202  018C                     	;# 
+   203  018D                     	;# 
+   204                           
+   205                           	psect	idataCOMMON
+   206  079C                     __pidataCOMMON:
+   207                           
+   208                           ;initializer for _a
+   209  079C  3401               	retlw	1
+   210  079D  3400               	retlw	0
+   211  0007                     _PORTC	set	7
+   212  003F                     _RC7	set	63
+   213  003A                     _RC2	set	58
+   214  0039                     _RC1	set	57
+   215  0038                     _RC0	set	56
+   216  0087                     _TRISC	set	135
+   217                           
+   218                           	psect	cinit
+   219  07EE                     start_initialization:	
+   220                           ; #config settings
+   221                           
+   222  07EE                     __initialization:
+   223                           
+   224                           ; Initialize objects allocated to COMMON
+   225  07EE  120A  118A  279C  120A  118A  	fcall	__pidataCOMMON	;fetch initializer
+   226  07F3  00F2               	movwf	__pdataCOMMON& (0+127)
+   227  07F4  120A  118A  279D  120A  118A  	fcall	__pidataCOMMON+1	;fetch initializer
+   228  07F9  00F3               	movwf	(__pdataCOMMON+1)& (0+127)
+   229                           
+   230                           ; Clear objects allocated to COMMON
+   231  07FA  01F0               	clrf	__pbssCOMMON& (0+127)
+   232  07FB  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   233  07FC                     end_of_initialization:	
+   234                           ;End of C runtime variable initialization code
+   235                           
+   236  07FC                     __end_of__initialization:
+   237  07FC  0183               	clrf	3
+   238  07FD  120A  118A  2FB6   	ljmp	_main	;jump to C main() function
+   239                           
+   240                           	psect	bssCOMMON
+   241  0070                     __pbssCOMMON:
+   242  0070                     _b:
+   243  0070                     	ds	2
+   244                           
+   245                           	psect	dataCOMMON
+   246  0072                     __pdataCOMMON:
+   247  0072                     _a:
+   248  0072                     	ds	2
+   249                           
+   250                           	psect	cstackCOMMON
+   251  0074                     __pcstackCOMMON:
+   252  0074                     ?_display:
+   253  0074                     ?_swap:	
+   254                           ; 1 bytes @ 0x0
+   255                           
+   256  0074                     ??_swap:	
+   257                           ; 1 bytes @ 0x0
+   258                           
+   259  0074                     ?_main:	
+   260                           ; 1 bytes @ 0x0
+   261                           
+   262  0074                     display@a:	
+   263                           ; 1 bytes @ 0x0
+   264                           
+   265  0074                     swap@x:	
+   266                           ; 2 bytes @ 0x0
+   267                           
+   268                           
+   269                           ; 2 bytes @ 0x0
+   270  0074                     	ds	2
+   271  0076                     ??_display:
+   272  0076                     ??_main:	
+   273                           ; 1 bytes @ 0x2
+   274                           
+   275                           
+   276                           	psect	maintext
+   277  07B6                     __pmaintext:	
+   278                           ; 1 bytes @ 0x2
+   279 ;;
+   280 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   281 ;;
+   282 ;; *************** function _main *****************
+   283 ;; Defined at:
+   284 ;;		line 16 in file "INTERCHANGE METHOD.c"
+   285 ;; Parameters:    Size  Location     Type
+   286 ;;		None
+   287 ;; Auto vars:     Size  Location     Type
+   288 ;;		None
+   289 ;; Return value:  Size  Location     Type
+   290 ;;                  1    wreg      void 
+   291 ;; Registers used:
+   292 ;;		wreg, status,2, status,0, pclath, cstack
+   293 ;; Tracked objects:
+   294 ;;		On entry : B00/0
+   295 ;;		On exit  : 0/0
+   296 ;;		Unchanged: 0/0
+   297 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   298 ;;      Params:         0       0       0       0       0
+   299 ;;      Locals:         0       0       0       0       0
+   300 ;;      Temps:          0       0       0       0       0
+   301 ;;      Totals:         0       0       0       0       0
+   302 ;;Total ram usage:        0 bytes
+   303 ;; Hardware stack levels required when called: 1
+   304 ;; This function calls:
+   305 ;;		_display
+   306 ;;		_swap
+   307 ;; This function is called by:
+   308 ;;		Startup code after reset
+   309 ;; This function uses a non-reentrant model
+   310 ;;
+   311                           
+   312                           
+   313                           ;psect for function _main
+   314  07B6                     _main:
+   315  07B6                     l654:	
+   316                           ;incstack = 0
+   317                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   318                           
+   319                           
+   320                           ;INTERCHANGE METHOD.c: 18:     TRISC=0X07;
+   321  07B6  3007               	movlw	7
+   322  07B7  1683               	bsf	3,5	;RP0=1, select bank1
+   323  07B8  1303               	bcf	3,6	;RP1=0, select bank1
+   324  07B9  0087               	movwf	7	;volatile
+   325  07BA                     l656:
+   326                           
+   327                           ;INTERCHANGE METHOD.c: 19:     PORTC=0X00;
+   328  07BA  1283               	bcf	3,5	;RP0=0, select bank0
+   329  07BB  1303               	bcf	3,6	;RP1=0, select bank0
+   330  07BC  0187               	clrf	7	;volatile
+   331  07BD                     l658:
+   332                           
+   333                           ;INTERCHANGE METHOD.c: 21:     {;INTERCHANGE METHOD.c: 22:         if(RC0==1)
+   334  07BD  1C07               	btfss	7,0	;volatile
+   335  07BE  2FC0               	goto	u91
+   336  07BF  2FC1               	goto	u90
+   337  07C0                     u91:
+   338  07C0  2FCA               	goto	l662
+   339  07C1                     u90:
+   340  07C1                     l660:
+   341                           
+   342                           ;INTERCHANGE METHOD.c: 23:         {;INTERCHANGE METHOD.c: 24:             display(a);
+   343  07C1  0873               	movf	_a+1,w
+   344  07C2  00F5               	movwf	display@a+1
+   345  07C3  0872               	movf	_a,w
+   346  07C4  00F4               	movwf	display@a
+   347  07C5  120A  118A  279E  120A  118A  	fcall	_display
+   348  07CA                     l662:
+   349                           
+   350                           ;INTERCHANGE METHOD.c: 26:         if(RC1==1)
+   351  07CA  1283               	bcf	3,5	;RP0=0, select bank0
+   352  07CB  1303               	bcf	3,6	;RP1=0, select bank0
+   353  07CC  1C87               	btfss	7,1	;volatile
+   354  07CD  2FCF               	goto	u101
+   355  07CE  2FD0               	goto	u100
+   356  07CF                     u101:
+   357  07CF  2FD9               	goto	l666
+   358  07D0                     u100:
+   359  07D0                     l664:
+   360                           
+   361                           ;INTERCHANGE METHOD.c: 27:         {;INTERCHANGE METHOD.c: 28:             display(b);
+   362  07D0  0871               	movf	_b+1,w
+   363  07D1  00F5               	movwf	display@a+1
+   364  07D2  0870               	movf	_b,w
+   365  07D3  00F4               	movwf	display@a
+   366  07D4  120A  118A  279E  120A  118A  	fcall	_display
+   367  07D9                     l666:
+   368                           
+   369                           ;INTERCHANGE METHOD.c: 30:         if(RC2==1)
+   370  07D9  1283               	bcf	3,5	;RP0=0, select bank0
+   371  07DA  1303               	bcf	3,6	;RP1=0, select bank0
+   372  07DB  1D07               	btfss	7,2	;volatile
+   373  07DC  2FDE               	goto	u111
+   374  07DD  2FDF               	goto	u110
+   375  07DE                     u111:
+   376  07DE  2FBD               	goto	l658
+   377  07DF                     u110:
+   378  07DF                     l668:
+   379                           
+   380                           ;INTERCHANGE METHOD.c: 31:         {;INTERCHANGE METHOD.c: 32:             swap();
+   381  07DF  120A  118A  27A9  120A  118A  	fcall	_swap
+   382  07E4                     l29:	
+   383                           ;INTERCHANGE METHOD.c: 33:             while(RC2==1);
+   384                           
+   385  07E4  1283               	bcf	3,5	;RP0=0, select bank0
+   386  07E5  1303               	bcf	3,6	;RP1=0, select bank0
+   387  07E6  1907               	btfsc	7,2	;volatile
+   388  07E7  2FE9               	goto	u121
+   389  07E8  2FEA               	goto	u120
+   390  07E9                     u121:
+   391  07E9  2FE4               	goto	l29
+   392  07EA                     u120:
+   393  07EA  2FBD               	goto	l658
+   394  07EB  120A  118A  2800   	ljmp	start
+   395  07EE                     __end_of_main:
+   396                           
+   397                           	psect	text1
+   398  07A9                     __ptext1:	
+   399 ;; *************** function _swap *****************
+   400 ;; Defined at:
+   401 ;;		line 41 in file "INTERCHANGE METHOD.c"
+   402 ;; Parameters:    Size  Location     Type
+   403 ;;		None
+   404 ;; Auto vars:     Size  Location     Type
+   405 ;;  x               2    0[COMMON] int 
+   406 ;; Return value:  Size  Location     Type
+   407 ;;                  1    wreg      void 
+   408 ;; Registers used:
+   409 ;;		wreg
+   410 ;; Tracked objects:
+   411 ;;		On entry : 0/0
+   412 ;;		On exit  : 0/0
+   413 ;;		Unchanged: 0/0
+   414 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   415 ;;      Params:         0       0       0       0       0
+   416 ;;      Locals:         2       0       0       0       0
+   417 ;;      Temps:          0       0       0       0       0
+   418 ;;      Totals:         2       0       0       0       0
+   419 ;;Total ram usage:        2 bytes
+   420 ;; Hardware stack levels used: 1
+   421 ;; This function calls:
+   422 ;;		Nothing
+   423 ;; This function is called by:
+   424 ;;		_main
+   425 ;; This function uses a non-reentrant model
+   426 ;;
+   427                           
+   428                           
+   429                           ;psect for function _swap
+   430  07A9                     _swap:
+   431  07A9                     l634:	
+   432                           ;incstack = 0
+   433                           ; Regs used in _swap: [wreg]
+   434                           
+   435                           
+   436                           ;INTERCHANGE METHOD.c: 43:     int x;;INTERCHANGE METHOD.c: 44:     x=a;
+   437  07A9  0873               	movf	_a+1,w
+   438  07AA  00F5               	movwf	swap@x+1
+   439  07AB  0872               	movf	_a,w
+   440  07AC  00F4               	movwf	swap@x
+   441                           
+   442                           ;INTERCHANGE METHOD.c: 45:     a=b;
+   443  07AD  0871               	movf	_b+1,w
+   444  07AE  00F3               	movwf	_a+1
+   445  07AF  0870               	movf	_b,w
+   446  07B0  00F2               	movwf	_a
+   447                           
+   448                           ;INTERCHANGE METHOD.c: 46:     b=x;
+   449  07B1  0875               	movf	swap@x+1,w
+   450  07B2  00F1               	movwf	_b+1
+   451  07B3  0874               	movf	swap@x,w
+   452  07B4  00F0               	movwf	_b
+   453  07B5                     l40:
+   454  07B5  0008               	return
+   455  07B6                     __end_of_swap:
+   456                           
+   457                           	psect	text2
+   458  079E                     __ptext2:	
+   459 ;; *************** function _display *****************
+   460 ;; Defined at:
+   461 ;;		line 37 in file "INTERCHANGE METHOD.c"
+   462 ;; Parameters:    Size  Location     Type
+   463 ;;  a               2    0[COMMON] int 
+   464 ;; Auto vars:     Size  Location     Type
+   465 ;;		None
+   466 ;; Return value:  Size  Location     Type
+   467 ;;                  1    wreg      void 
+   468 ;; Registers used:
+   469 ;;		None
+   470 ;; Tracked objects:
+   471 ;;		On entry : 0/0
+   472 ;;		On exit  : 0/0
+   473 ;;		Unchanged: 0/0
+   474 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   475 ;;      Params:         2       0       0       0       0
+   476 ;;      Locals:         0       0       0       0       0
+   477 ;;      Temps:          0       0       0       0       0
+   478 ;;      Totals:         2       0       0       0       0
+   479 ;;Total ram usage:        2 bytes
+   480 ;; Hardware stack levels used: 1
+   481 ;; This function calls:
+   482 ;;		Nothing
+   483 ;; This function is called by:
+   484 ;;		_main
+   485 ;; This function uses a non-reentrant model
+   486 ;;
+   487                           
+   488                           
+   489                           ;psect for function _display
+   490  079E                     _display:
+   491  079E                     l652:	
+   492                           ;incstack = 0
+   493                           ; Regs used in _display: []
+   494                           
+   495                           
+   496                           ;INTERCHANGE METHOD.c: 37: void display(int a);INTERCHANGE METHOD.c: 38: {;INTERCHANGE M
+      +                          ETHOD.c: 39:     RC7=a;
+   497  079E  1874               	btfsc	display@a,0
+   498  079F  2FA1               	goto	u71
+   499  07A0  2FA5               	goto	u70
+   500  07A1                     u71:
+   501  07A1  1283               	bcf	3,5	;RP0=0, select bank0
+   502  07A2  1303               	bcf	3,6	;RP1=0, select bank0
+   503  07A3  1787               	bsf	7,7	;volatile
+   504  07A4  2FA8               	goto	u84
+   505  07A5                     u70:
+   506  07A5  1283               	bcf	3,5	;RP0=0, select bank0
+   507  07A6  1303               	bcf	3,6	;RP1=0, select bank0
+   508  07A7  1387               	bcf	7,7	;volatile
+   509  07A8                     u84:
+   510  07A8                     l37:
+   511  07A8  0008               	return
+   512  07A9                     __end_of_display:
+   513  007E                     btemp	set	126	;btemp
+   514  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        2
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       6
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_display
+    _main->_swap
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     189
+                            _display
+                               _swap
+ ---------------------------------------------------------------------------------
+ (1) _swap                                                 2     2      0      15
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _display                                              2     0      2     174
+                                              0 COMMON     2     0      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _display
+   _swap
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0       0       5        0.0%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      2       6       1       42.9%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0       6      12        0.0%
+ABS                  0      0       6       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Mon Mar 20 12:09:44 2023
+
+                      _a 0072                        _b 0070                       l40 07B5  
+                     l37 07A8                       l29 07E4                       u70 07A5  
+                     u71 07A1                       u90 07C1                       u91 07C0  
+                     u84 07A8                      l634 07A9                      l652 079E  
+                    l660 07C1                      l662 07CA                      l654 07B6  
+                    l664 07D0                      l656 07BA                      l666 07D9  
+                    l658 07BD                      l668 07DF                      _RC0 0038  
+                    _RC1 0039                      _RC2 003A                      u100 07D0  
+                    u101 07CF                      _RC7 003F                      u110 07DF  
+                    u111 07DE                      u120 07EA                      u121 07E9  
+                   _main 07B6                     _swap 07A9                     btemp 007E  
+                   start 0000                    ?_main 0074                    ?_swap 0074  
+                  _PORTC 0007                    _TRISC 0087          __end_of_display 07A9  
+                  swap@x 0074                    status 0003                    wtemp0 007E  
+        __initialization 07EE             __end_of_main 07EE             __end_of_swap 07B6  
+                 ??_main 0076                   ??_swap 0074                ??_display 0076  
+           __pdataCOMMON 0072  __end_of__initialization 07FC           __pcstackCOMMON 0074  
+             __pmaintext 07B6                  __ptext1 07A9                  __ptext2 079E  
+                _display 079E     end_of_initialization 07FC            __pidataCOMMON 079C  
+    start_initialization 07EE              __pbssCOMMON 0070                ___latbits 0002  
+               ?_display 0074         __size_of_display 000B            __size_of_main 0038  
+          __size_of_swap 000D                 display@a 0074  

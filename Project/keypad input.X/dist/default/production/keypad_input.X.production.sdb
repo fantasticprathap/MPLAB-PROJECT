@@ -1,0 +1,106 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"21 D:\MPLAB\Basic\keypad input.X\ketpad input.c
+[v _main main `(v  1 e 1 0 ]
+"44
+[v _keypad keypad `(v  1 e 1 0 ]
+"67
+[v _pulse pulse `(v  1 e 1 0 ]
+"74
+[v _LCD LCD `(v  1 e 1 0 ]
+"81
+[v _first_seg first_seg `(v  1 e 1 0 ]
+"88
+[v _second_seg second_seg `(v  1 e 1 0 ]
+"95
+[v _third_seg third_seg `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4079
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"4082
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"4085
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"4181
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4184
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4187
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"4190
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"4193
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"4196
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"4199
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"4202
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"21 D:\MPLAB\Basic\keypad input.X\ketpad input.c
+[v _main main `(v  1 e 1 0 ]
+{
+"43
+} 0
+"95
+[v _third_seg third_seg `(v  1 e 1 0 ]
+{
+"101
+} 0
+"88
+[v _second_seg second_seg `(v  1 e 1 0 ]
+{
+"94
+} 0
+"81
+[v _first_seg first_seg `(v  1 e 1 0 ]
+{
+"87
+} 0
+"44
+[v _keypad keypad `(v  1 e 1 0 ]
+{
+[v keypad@w w `i  1 p 2 6 ]
+[v keypad@x x `i  1 p 2 8 ]
+[v keypad@y y `i  1 p 2 10 ]
+[v keypad@z z `i  1 p 2 12 ]
+"66
+} 0
+"74
+[v _LCD LCD `(v  1 e 1 0 ]
+{
+[v LCD@g g `i  1 p 2 2 ]
+[v LCD@h h `i  1 p 2 4 ]
+"80
+} 0
+"67
+[v _pulse pulse `(v  1 e 1 0 ]
+{
+"73
+} 0

@@ -1,0 +1,140 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"22 D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+[v _main main `(v  1 e 1 0 ]
+"41
+[v _pulse pulse `(v  1 e 1 0 ]
+"48
+[v _LCD LCD `(v  1 e 1 0 ]
+"55
+[v _first_seg first_seg `(v  1 e 1 0 ]
+"62
+[v _second_seg second_seg `(v  1 e 1 0 ]
+"69
+[v _third_seg third_seg `(v  1 e 1 0 ]
+"76
+[v _keypad keypad `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4079
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"4082
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"4085
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"4181
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4184
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4187
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"4190
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"4193
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"4196
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"4199
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"18 D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+[v _add add `[3]i  1 e 6 0 ]
+"19
+[v _num num `[12]i  1 e 24 0 ]
+"20
+[v _i i `i  1 e 2 0 ]
+"21
+[v _total total `i  1 e 2 0 ]
+"22
+[v _main main `(v  1 e 1 0 ]
+{
+"40
+} 0
+"69
+[v _third_seg third_seg `(v  1 e 1 0 ]
+{
+"75
+} 0
+"62
+[v _second_seg second_seg `(v  1 e 1 0 ]
+{
+"68
+} 0
+"55
+[v _first_seg first_seg `(v  1 e 1 0 ]
+{
+"61
+} 0
+"76
+[v _keypad keypad `(v  1 e 1 0 ]
+{
+[v keypad@a a `i  1 p 2 0 ]
+[v keypad@b b `i  1 p 2 2 ]
+[v keypad@c c `i  1 p 2 4 ]
+[v keypad@d d `i  1 p 2 6 ]
+"114
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"48 D:\MPLAB\Basic\keypad using addition.X\keypad using addition.c
+[v _LCD LCD `(v  1 e 1 0 ]
+{
+[v LCD@g g `i  1 p 2 9 ]
+[v LCD@h h `i  1 p 2 11 ]
+"54
+} 0
+"41
+[v _pulse pulse `(v  1 e 1 0 ]
+{
+"47
+} 0
